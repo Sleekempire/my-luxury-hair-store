@@ -409,25 +409,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-menu-links {
-    padding: 50px;
+    padding: 30px;
 }
 
 .mobile-menu-links li {
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .mobile-link {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
     display: block;
     color: var(--color-text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 0;
+    transition: var(--transition-standard);
 }
 
 .mobile-link:hover {
     color: var(--color-accent);
-    transform: translateX(10px);
+    padding-left: 10px;
+    border-bottom-color: var(--color-accent);
 }
 
 /* Cart Drawer (Right) */
@@ -1603,3 +1608,86 @@ footer {
 .payment-methods i {
     color: rgba(255, 255, 255, 0.3);
 }
+
+/* Mobile Optimization & Responsive Reductions */
+@media (max-width: 768px) {
+    .drawer-header {
+        padding: 20px 25px !important;
+    }
+    .cart-items-container {
+        padding: 25px !important;
+    }
+    .mobile-menu-links {
+        padding: 20px 25px !important;
+    }
+    .cart-drawer, .mobile-drawer {
+        width: 100% !important;
+    }
+    .section-title, .section-title-alt {
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
+    }
+    .brand-pitch {
+        padding: 80px 0 !important;
+    }
+    .pitch-grid {
+        gap: 40px !important;
+    }
+    .pitch-card h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 12px !important;
+    }
+    .pitch-card p {
+        font-size: 0.85rem !important;
+    }
+    .collections-section, .products-section, .newsletter-section {
+        padding: 80px 0 !important;
+    }
+    .promo-banner {
+        padding: 140px 0 !important;
+    }
+    .promo-content h2 {
+        font-size: 2.2rem !important;
+    }
+    .promo-content p {
+        font-size: 0.95rem !important;
+        margin-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+        margin-bottom: 20px !important;
+    }
+    .hero-description {
+        font-size: 0.88rem !important;
+        margin-bottom: 35px !important;
+        line-height: 1.6 !important;
+    }
+    .hero-actions {
+        gap: 12px !important;
+    }
+    .btn {
+        padding: 14px 28px !important;
+        font-size: 0.7rem !important;
+    }
+    .newsletter-section h2 {
+        font-size: 1.8rem !important;
+    }
+    .newsletter-section p {
+        font-size: 0.85rem !important;
+        margin-bottom: 30px !important;
+    }
+    .newsletter-form {
+        max-width: 100% !important;
+    }
+    .newsletter-input {
+        padding: 12px !important;
+        font-size: 0.85rem !important;
+    }
+    .newsletter-form .btn {
+        padding: 12px 25px !important;
+    }
+}
+
