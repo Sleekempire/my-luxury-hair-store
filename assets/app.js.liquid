@@ -1,12 +1,12 @@
-// Products Data
+// Products Data processed by Shopify Liquid
 const PRODUCTS = [
     {
         id: 1,
         title: "The Enoléh Body Wave Wig",
         category: "wigs",
         price: 599.00,
-        image: "images/body_wave_wig.jpg",
-        hoverImage: "images/curly_wig.jpg",
+        image: "{{ 'body_wave_wig.jpg' | asset_url }}",
+        hoverImage: "{{ 'curly_wig.jpg' | asset_url }}",
         description: "Experience absolute luxury with our signature pre-plucked 13x6 HD lace front wig. Constructed with premium body wave human hair that melts invisibly into the scalp.",
         lengths: ["20 inch", "24 inch", "28 inch"]
     },
@@ -15,8 +15,8 @@ const PRODUCTS = [
         title: "Virgin Silky Straight Bundles",
         category: "bundles",
         price: 399.00,
-        image: "images/straight_bundles.jpg",
-        hoverImage: "images/body_wave_wig.jpg",
+        image: "{{ 'straight_bundles.jpg' | asset_url }}",
+        hoverImage: "{{ 'body_wave_wig.jpg' | asset_url }}",
         description: "Thick, full-body straight bundles tied in a premium package. 100% cuticle-aligned virgin human hair that holds curl styling beautifully and can be bleached to 613 blond.",
         lengths: ["18 inch", "22 inch", "26 inch"]
     },
@@ -25,8 +25,8 @@ const PRODUCTS = [
         title: "Luxury Deep Wave Curly Wig",
         category: "wigs",
         price: 520.00,
-        image: "images/curly_wig.jpg",
-        hoverImage: "images/straight_bundles.jpg",
+        image: "{{ 'curly_wig.jpg' | asset_url }}",
+        hoverImage: "{{ 'straight_bundles.jpg' | asset_url }}",
         description: "A highly sought-after bouncy curls unit with soft HD lace. Offers a natural-looking hairline, pre-plucked baby hairs, and double-drawn density for max volume.",
         lengths: ["20 inch", "22 inch", "24 inch"]
     }
@@ -374,6 +374,7 @@ function openCart() {
     cartDrawer.classList.add('open');
 }
 
+// Close Cart Drawer
 function closeCart() {
     cartDrawerOverlay.classList.remove('open');
     cartDrawer.classList.remove('open');
