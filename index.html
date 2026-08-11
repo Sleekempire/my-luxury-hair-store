@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enoléh Inspired - Luxury Hair & Wigs Store</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="Discover premium human hair extensions, luxury wigs, frontals, and closures. Experience the ultimate hair quality inspired by Enoléh.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="header-transparent">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <!-- Navigation Links Left -->
+            <nav class="desktop-nav nav-left">
+                <ul>
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Shop Wigs</a></li>
+                    <li><a href="#" class="nav-link">Bundles</a></li>
+                </ul>
+            </nav>
+
+            <!-- Centered Logo -->
+            <div class="logo-container">
+                <a href="#" class="logo-text">ENOLÉH</a>
+            </div>
+
+            <!-- Navigation Links Right -->
+            <nav class="desktop-nav nav-right">
+                <ul>
+                    <li><a href="#" class="nav-link">Closures & Frontals</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Utility Icons -->
+            <div class="header-utilities">
+                <button class="utility-btn" id="search-trigger" aria-label="Search Store">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="#" class="utility-btn" id="account-link" aria-label="Account">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <button class="utility-btn" id="cart-trigger" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">MENU</span>
+            <button class="drawer-close" id="mobile-drawer-close">&times;</button>
+        </div>
+        <nav class="mobile-menu-links">
+            <ul>
+                <li><a href="#" class="mobile-link">Home</a></li>
+                <li><a href="#" class="mobile-link">Shop Wigs</a></li>
+                <li><a href="#" class="mobile-link">Bundles</a></li>
+                <li><a href="#" class="mobile-link">Closures & Frontals</a></li>
+                <li><a href="#" class="mobile-link">About Us</a></li>
+                <li><a href="#" class="mobile-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Fullscreen Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <button class="search-close" id="search-close-btn">&times;</button>
+        <div class="search-overlay-content">
+            <h3 class="search-heading">What are you looking for?</h3>
+            <form class="search-form" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Search for wigs, bundles, closures..." class="search-input" id="search-input-field" autocomplete="off">
+                <button type="submit" class="search-submit-btn"><i class="fa-solid fa-arrow-right-long"></i></button>
+            </form>
+            <div class="search-suggestions">
+                <span class="suggestion-tag">Body Wave Wig</span>
+                <span class="suggestion-tag">Virgin Straight Bundles</span>
+                <span class="suggestion-tag">HD Lace Frontals</span>
+                <span class="suggestion-tag">Glueless Wigs</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar Drawer -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">YOUR BAG (<span id="cart-drawer-count">0</span>)</span>
+            <button class="drawer-close" id="cart-drawer-close">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Empty Cart State -->
+            <div class="empty-cart-state" id="empty-cart-state">
+                <i class="fa-solid fa-bag-shopping empty-icon"></i>
+                <p>Your bag is currently empty.</p>
+                <button class="btn btn-gold btn-shop-now" id="cart-shop-now-btn">Shop Our Collection</button>
+            </div>
+            <!-- Cart Items List will be injected here by app.js -->
+            <div class="cart-items-list" id="cart-items-list" style="display: none;"></div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span class="subtotal-amount" id="cart-subtotal-value">$0.00</span>
+            </div>
+            <p class="shipping-tax-note">Shipping & taxes calculated at checkout</p>
+            <button class="btn btn-gold btn-checkout" id="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-overlay"></div>
+    <div class="quick-view-modal" id="quick-view-modal">
+        <button class="modal-close" id="quick-view-close">&times;</button>
+        <div class="modal-body" id="quick-view-body">
+            <!-- Content will be dynamically populated by app.js -->
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg-container">
+                <img src="images/hero_model.jpg" alt="Luxury model with silky straight hair" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-subtitle">THE CROWN YOU DESERVE</span>
+                <h1 class="hero-title">Premium Luxury Hair Extensions & Wigs</h1>
+                <p class="hero-description">Experience 100% premium virgin human hair sourced responsibly. Flawless HD lace, pre-plucked frontals, and thick, silky bundles crafted for the modern luxury experience.</p>
+                <div class="hero-actions">
+                    <a href="#featured-products" class="btn btn-gold">Shop Wigs</a>
+                    <a href="#collections" class="btn btn-outline">Explore Bundles</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll Down</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Brand Pitch Section -->
+        <section class="brand-pitch">
+            <div class="container text-center">
+                <h2 class="section-title-alt">The Enoléh Standard</h2>
+                <div class="pitch-grid">
+                    <div class="pitch-card">
+                        <div class="pitch-icon"><i class="fa-solid fa-gem"></i></div>
+                        <h3>100% Virgin Human Hair</h3>
+                        <p>No synthetic blends. Ethically sourced, cuticle-aligned hair designed to last with proper care.</p>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="pitch-icon"><i class="fa-solid fa-sparkles"></i></div>
+                        <h3>Unrivaled HD Lace</h3>
+                        <p>Ultra-thin, Swiss-grade HD lace that melts seamlessly into any skin tone, giving an invisible hairline.</p>
+                    </div>
+                    <div class="pitch-card">
+                        <div class="pitch-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Premium Fast Delivery</h3>
+                        <p>Express tracked worldwide shipping. Your luxury extensions arrive elegantly boxed and ready for styling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collections Section -->
+        <section class="collections-section" id="collections">
+            <div class="container">
+                <h2 class="section-title">Shop By Collection</h2>
+                <div class="collections-grid">
+                    <!-- Collection 1 -->
+                    <div class="collection-card">
+                        <div class="collection-img-wrapper">
+                            <img src="images/body_wave_wig.jpg" alt="Luxury Wigs Collection" class="collection-img">
+                        </div>
+                        <div class="collection-content">
+                            <h3>High-End Wigs</h3>
+                            <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                    <!-- Collection 2 -->
+                    <div class="collection-card">
+                        <div class="collection-img-wrapper">
+                            <img src="images/straight_bundles.jpg" alt="Silky Bundles Collection" class="collection-img">
+                        </div>
+                        <div class="collection-content">
+                            <h3>Premium Bundles</h3>
+                            <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                    <!-- Collection 3 -->
+                    <div class="collection-card">
+                        <div class="collection-img-wrapper">
+                            <img src="images/curly_wig.jpg" alt="Closures & Frontals Collection" class="collection-img">
+                        </div>
+                        <div class="collection-content">
+                            <h3>Closures & Frontals</h3>
+                            <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="products-section" id="featured-products">
+            <div class="container">
+                <div class="section-header-flex">
+                    <h2 class="section-title">Bestselling Extensions</h2>
+                    <div class="product-filters">
+                        <span class="filter-tab active" data-filter="all">All</span>
+                        <span class="filter-tab" data-filter="wigs">Wigs</span>
+                        <span class="filter-tab" data-filter="bundles">Bundles</span>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be generated dynamically by JavaScript to support easy state operations, but we can set them up here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Aesthetic Video Banner/Promo -->
+        <section class="promo-banner">
+            <div class="promo-bg-overlay"></div>
+            <div class="promo-content container">
+                <h2>Designed for the Glamorous</h2>
+                <p>Every strand is selected with meticulous attention to detail. Bleach it, dye it, style it—our extensions maintain their natural lustre and thickness from root to tip.</p>
+                <a href="#featured-products" class="btn btn-gold">Explore Boutique</a>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription -->
+        <section class="newsletter-section">
+            <div class="container text-center">
+                <h2>Join the Enoléh Elite</h2>
+                <p>Subscribe to receive exclusive access to sales, limited edition product drops, and expert hair care tutorials.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the Elite club!'); this.reset();">
+                    <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                    <button type="submit" class="btn btn-gold">Join Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <h3 class="footer-logo">ENOLÉH</h3>
+                <p class="brand-mission">A leading brand in luxury hair wigs and bundles, providing high-fashion, ethically-sourced human hair collections worldwide.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">HD Lace Wigs</a></li>
+                    <li><a href="#">Straight & Body Wave Bundles</a></li>
+                    <li><a href="#">Deep Curly & Custom Units</a></li>
+                    <li><a href="#">Lace Frontals</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Return & Refund Policy</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Company</h4>
+                <ul>
+                    <li><a href="#">About Enoléh</a></li>
+                    <li><a href="#">Ethical Sourcing</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-flex">
+                <p>&copy; 2026 ENOLÉH Store. All rights reserved. Developed by Antigravity.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

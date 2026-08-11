@@ -1,0 +1,380 @@
+// Products Data
+const PRODUCTS = [
+    {
+        id: 1,
+        title: "The Enoléh Body Wave Wig",
+        category: "wigs",
+        price: 599.00,
+        image: "images/body_wave_wig.jpg",
+        hoverImage: "images/curly_wig.jpg",
+        description: "Experience absolute luxury with our signature pre-plucked 13x6 HD lace front wig. Constructed with premium body wave human hair that melts invisibly into the scalp.",
+        lengths: ["20 inch", "24 inch", "28 inch"]
+    },
+    {
+        id: 2,
+        title: "Virgin Silky Straight Bundles",
+        category: "bundles",
+        price: 399.00,
+        image: "images/straight_bundles.jpg",
+        hoverImage: "images/body_wave_wig.jpg",
+        description: "Thick, full-body straight bundles tied in a premium package. 100% cuticle-aligned virgin human hair that holds curl styling beautifully and can be bleached to 613 blond.",
+        lengths: ["18 inch", "22 inch", "26 inch"]
+    },
+    {
+        id: 3,
+        title: "Luxury Deep Wave Curly Wig",
+        category: "wigs",
+        price: 520.00,
+        image: "images/curly_wig.jpg",
+        hoverImage: "images/straight_bundles.jpg",
+        description: "A highly sought-after bouncy curls unit with soft HD lace. Offers a natural-looking hairline, pre-plucked baby hairs, and double-drawn density for max volume.",
+        lengths: ["20 inch", "22 inch", "24 inch"]
+    }
+];
+
+// Application State
+let cart = [];
+
+// DOM Elements
+const productsGrid = document.getElementById('products-grid');
+const header = document.getElementById('main-header');
+const cartTrigger = document.getElementById('cart-trigger');
+const cartDrawer = document.getElementById('cart-drawer');
+const cartDrawerClose = document.getElementById('cart-drawer-close');
+const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
+const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+const mobileDrawer = document.getElementById('mobile-drawer');
+const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+const searchTrigger = document.getElementById('search-trigger');
+const searchOverlay = document.getElementById('search-overlay');
+const searchCloseBtn = document.getElementById('search-close-btn');
+const searchInputField = document.getElementById('search-input-field');
+const quickViewOverlay = document.getElementById('quick-view-overlay');
+const quickViewModal = document.getElementById('quick-view-modal');
+const quickViewClose = document.getElementById('quick-view-close');
+const quickViewBody = document.getElementById('quick-view-body');
+const cartBadgeCount = document.getElementById('cart-badge-count');
+const cartDrawerCount = document.getElementById('cart-drawer-count');
+const emptyCartState = document.getElementById('empty-cart-state');
+const cartItemsList = document.getElementById('cart-items-list');
+const cartFooter = document.getElementById('cart-footer');
+const cartSubtotalValue = document.getElementById('cart-subtotal-value');
+const cartShopNowBtn = document.getElementById('cart-shop-now-btn');
+const checkoutButton = document.getElementById('checkout-button');
+
+// Initialize Store
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(PRODUCTS);
+    setupEventListeners();
+});
+
+// Scroll Effects
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.remove('header-transparent');
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+        header.classList.add('header-transparent');
+    }
+});
+
+// Setup Listeners
+function setupEventListeners() {
+    // Cart Drawer Toggle
+    cartTrigger.addEventListener('click', openCart);
+    cartDrawerClose.addEventListener('click', closeCart);
+    cartDrawerOverlay.addEventListener('click', closeCart);
+    cartShopNowBtn.addEventListener('click', () => {
+        closeCart();
+        window.location.hash = "#featured-products";
+    });
+
+    // Mobile Menu Drawer Toggle
+    mobileNavToggle.addEventListener('click', () => mobileDrawer.classList.add('open'));
+    mobileDrawerClose.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+
+    // Fullscreen Search Toggle
+    searchTrigger.addEventListener('click', () => {
+        searchOverlay.classList.add('open');
+        setTimeout(() => searchInputField.focus(), 300);
+    });
+    searchCloseBtn.addEventListener('click', () => searchOverlay.classList.remove('open'));
+
+    // Close Search on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            searchOverlay.classList.remove('open');
+            closeQuickView();
+            closeCart();
+        }
+    });
+
+    // Filters
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            const category = e.target.dataset.filter;
+            if (category === 'all') {
+                renderProducts(PRODUCTS);
+            } else {
+                const filtered = PRODUCTS.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        });
+    });
+
+    // Quick View Close
+    quickViewClose.addEventListener('click', closeQuickView);
+    quickViewOverlay.addEventListener('click', closeQuickView);
+
+    // Checkout Alert Mock
+    checkoutButton.addEventListener('click', () => {
+        alert("Proceeding to secure checkout under Shopify domain...");
+    });
+
+    // Suggestion Tag Clicks
+    const suggestionTags = document.querySelectorAll('.suggestion-tag');
+    suggestionTags.forEach(tag => {
+        tag.addEventListener('click', (e) => {
+            searchInputField.value = e.target.textContent;
+            searchOverlay.classList.remove('open');
+            // Filter products matching search
+            const query = e.target.textContent.toLowerCase();
+            const results = PRODUCTS.filter(p => p.title.toLowerCase().includes(query));
+            renderProducts(results);
+            window.location.hash = "#featured-products";
+        });
+    });
+}
+
+// Render Products Grid
+function renderProducts(productsList) {
+    productsGrid.innerHTML = '';
+    
+    if (productsList.length === 0) {
+        productsGrid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted);">No products found matching selection.</p>';
+        return;
+    }
+
+    productsList.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="product-badge">Bestseller</div>
+            <div class="product-img-wrapper">
+                <img src="${product.image}" alt="${product.title}" class="product-primary-img">
+                <img src="${product.hoverImage}" alt="${product.title}" class="product-secondary-img">
+                <div class="product-hover-actions">
+                    <button class="product-hover-btn quick-buy" data-id="${product.id}">Quick Buy</button>
+                    <button class="product-hover-btn quick-view" data-id="${product.id}">Quick View</button>
+                </div>
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">${product.title}</h3>
+                <span class="product-price">$${product.price.toFixed(2)}</span>
+            </div>
+        `;
+
+        // Attach event listeners to hover action buttons
+        card.querySelector('.quick-buy').addEventListener('click', (e) => {
+            e.stopPropagation();
+            addToCartDirectly(product.id);
+        });
+
+        card.querySelector('.quick-view').addEventListener('click', (e) => {
+            e.stopPropagation();
+            openQuickView(product.id);
+        });
+
+        productsGrid.appendChild(card);
+    });
+}
+
+// Quick View Functions
+function openQuickView(id) {
+    const product = PRODUCTS.find(p => p.id === id);
+    if (!product) return;
+
+    let lengthOptionsHtml = product.lengths.map((len, idx) => `
+        <div class="option-select ${idx === 0 ? 'active' : ''}" data-value="${len}">${len}</div>
+    `).join('');
+
+    quickViewBody.innerHTML = `
+        <div class="modal-gallery">
+            <img src="${product.image}" alt="${product.title}" id="modal-product-img">
+        </div>
+        <div class="modal-info-col">
+            <h3>${product.title}</h3>
+            <span class="modal-price" id="modal-product-price">$${product.price.toFixed(2)}</span>
+            <p class="modal-desc">${product.description}</p>
+            
+            <div class="modal-options-section">
+                <h4 class="modal-options-title">Select Length</h4>
+                <div class="modal-options-grid" id="modal-lengths-options">
+                    ${lengthOptionsHtml}
+                </div>
+            </div>
+
+            <div class="modal-qty-container">
+                <span class="modal-options-title">Quantity</span>
+                <div class="cart-item-qty" style="margin-top: 0;">
+                    <button class="qty-btn" id="modal-qty-dec">-</button>
+                    <span class="qty-val" id="modal-qty-val">1</span>
+                    <button class="qty-btn" id="modal-qty-inc">+</button>
+                </div>
+            </div>
+
+            <button class="btn btn-gold" id="modal-add-to-cart" style="width: 100%;">Add to Bag</button>
+        </div>
+    `;
+
+    // Hook events inside quick view
+    const optionBtns = quickViewBody.querySelectorAll('.option-select');
+    let selectedLength = product.lengths[0];
+
+    optionBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            optionBtns.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            selectedLength = e.target.dataset.value;
+        });
+    });
+
+    const qtyValEl = quickViewBody.querySelector('#modal-qty-val');
+    let quantity = 1;
+
+    quickViewBody.querySelector('#modal-qty-inc').addEventListener('click', () => {
+        quantity++;
+        qtyValEl.textContent = quantity;
+    });
+
+    quickViewBody.querySelector('#modal-qty-dec').addEventListener('click', () => {
+        if (quantity > 1) {
+            quantity--;
+            qtyValEl.textContent = quantity;
+        }
+    });
+
+    quickViewBody.querySelector('#modal-add-to-cart').addEventListener('click', () => {
+        addToCart(product.id, selectedLength, quantity);
+        closeQuickView();
+        openCart();
+    });
+
+    quickViewOverlay.classList.add('open');
+    quickViewModal.classList.add('open');
+}
+
+function closeQuickView() {
+    quickViewOverlay.classList.remove('open');
+    quickViewModal.classList.remove('open');
+}
+
+// Add to Cart Logic
+function addToCartDirectly(id) {
+    const product = PRODUCTS.find(p => p.id === id);
+    if (product) {
+        addToCart(product.id, product.lengths[0], 1);
+        openCart();
+    }
+}
+
+function addToCart(productId, length, qty) {
+    const existingIndex = cart.findIndex(item => item.id === productId && item.length === length);
+    
+    if (existingIndex > -1) {
+        cart[existingIndex].qty += qty;
+    } else {
+        const product = PRODUCTS.find(p => p.id === productId);
+        cart.push({
+            ...product,
+            length: length,
+            qty: qty
+        });
+    }
+    updateCartUI();
+}
+
+function updateCartUI() {
+    const totalItemsCount = cart.reduce((total, item) => total + item.qty, 0);
+    cartBadgeCount.textContent = totalItemsCount;
+    cartDrawerCount.textContent = totalItemsCount;
+
+    if (cart.length === 0) {
+        emptyCartState.style.display = 'flex';
+        cartItemsList.style.display = 'none';
+        cartFooter.style.display = 'none';
+    } else {
+        emptyCartState.style.display = 'none';
+        cartItemsList.style.display = 'flex';
+        cartFooter.style.display = 'block';
+
+        let cartSubtotal = 0;
+        cartItemsList.innerHTML = '';
+
+        cart.forEach((item, index) => {
+            const itemCost = item.price * item.qty;
+            cartSubtotal += itemCost;
+
+            const itemEl = document.createElement('div');
+            itemEl.className = 'cart-item';
+            itemEl.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h4>${item.title}</h4>
+                    <div class="cart-item-variant">${item.length}</div>
+                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                    <div class="cart-item-qty">
+                        <button class="qty-btn dec-qty" data-index="${index}">-</button>
+                        <span class="qty-val">${item.qty}</span>
+                        <button class="qty-btn inc-qty" data-index="${index}">+</button>
+                    </div>
+                </div>
+                <div>
+                    <button class="cart-item-remove remove-item" data-index="${index}">&times; Remove</button>
+                </div>
+            `;
+
+            // Qty modifier buttons
+            itemEl.querySelector('.dec-qty').addEventListener('click', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                if (cart[idx].qty > 1) {
+                    cart[idx].qty--;
+                } else {
+                    cart.splice(idx, 1);
+                }
+                updateCartUI();
+            });
+
+            itemEl.querySelector('.inc-qty').addEventListener('click', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                cart[idx].qty++;
+                updateCartUI();
+            });
+
+            itemEl.querySelector('.remove-item').addEventListener('click', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                cart.splice(idx, 1);
+                updateCartUI();
+            });
+
+            cartItemsList.appendChild(itemEl);
+        });
+
+        cartSubtotalValue.textContent = `$${cartSubtotal.toFixed(2)}`;
+    }
+}
+
+// Open/Close Cart Drawer
+function openCart() {
+    cartDrawerOverlay.classList.add('open');
+    cartDrawer.classList.add('open');
+}
+
+function closeCart() {
+    cartDrawerOverlay.classList.remove('open');
+    cartDrawer.classList.remove('open');
+}
