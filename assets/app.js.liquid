@@ -45,6 +45,7 @@ const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
 const mobileNavToggle = document.getElementById('mobile-nav-toggle');
 const mobileDrawer = document.getElementById('mobile-drawer');
 const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
 const searchTrigger = document.getElementById('search-trigger');
 const searchOverlay = document.getElementById('search-overlay');
 const searchCloseBtn = document.getElementById('search-close-btn');
@@ -91,8 +92,16 @@ function setupEventListeners() {
     });
 
     // Mobile Menu Drawer Toggle
-    mobileNavToggle.addEventListener('click', () => mobileDrawer.classList.add('open'));
-    mobileDrawerClose.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+    const closeMobileDrawer = () => {
+        mobileDrawer.classList.remove('open');
+        mobileDrawerOverlay.classList.remove('open');
+    };
+    mobileNavToggle.addEventListener('click', () => {
+        mobileDrawer.classList.add('open');
+        mobileDrawerOverlay.classList.add('open');
+    });
+    mobileDrawerClose.addEventListener('click', closeMobileDrawer);
+    mobileDrawerOverlay.addEventListener('click', closeMobileDrawer);
 
     // Fullscreen Search Toggle
     searchTrigger.addEventListener('click', () => {
@@ -107,6 +116,7 @@ function setupEventListeners() {
             searchOverlay.classList.remove('open');
             closeQuickView();
             closeCart();
+            closeMobileDrawer();
         }
     });
 
