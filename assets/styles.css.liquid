@@ -113,32 +113,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-gold {
-    background-color: var(--color-accent);
+    background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #907148 100%);
     color: var(--color-primary);
-    border: 1px solid var(--color-accent);
+    border: 1px solid rgba(197, 168, 128, 0.8);
     font-weight: 600;
-}
-
-.btn-gold::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-secondary);
-    z-index: -1;
-    transform: translateY(100%);
-    transition: var(--transition-luxury);
+    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-standard);
 }
 
 .btn-gold:hover {
-    color: var(--color-primary);
-    border-color: var(--color-secondary);
-}
-
-.btn-gold:hover::before {
-    transform: translateY(0);
+    color: var(--color-primary) !important;
+    border-color: #ebd1a9;
+    box-shadow: 0 8px 30px rgba(197, 168, 128, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -171,7 +158,8 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(5, 5, 5, 0.85);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid var(--color-border-thin);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 #main-header.header-scrolled .logo-text,
@@ -960,8 +948,17 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     height: 600px;
     overflow: hidden;
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-border-thin);
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: var(--transition-luxury);
+}
+
+.collection-card:hover {
+    border-color: rgba(197, 168, 128, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
 .collection-img-wrapper {
@@ -970,6 +967,29 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     opacity: 0.8;
     transition: var(--transition-luxury);
+    position: relative;
+}
+
+.collection-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.25) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 5;
+}
+
+.collection-card:hover .collection-img-wrapper::after {
+    left: 150%;
 }
 
 .collection-img {
@@ -1132,14 +1152,19 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border-thin);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-luxury);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .product-card:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(197, 168, 128, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 168, 128, 0.1);
+    transform: translateY(-5px);
 }
 
 .product-badge {
@@ -1161,6 +1186,28 @@ h1, h2, h3, h4, h5, h6 {
     height: 520px;
     overflow: hidden;
     background-color: var(--color-primary);
+}
+
+.product-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.25) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 5;
+}
+
+.product-card:hover .product-img-wrapper::after {
+    left: 150%;
 }
 
 .product-primary-img, .product-secondary-img {
@@ -1198,6 +1245,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition-luxury);
     opacity: 0;
     z-index: 10;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
 }
 
 .product-card:hover .product-hover-actions {
@@ -1207,7 +1256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-hover-btn {
     flex: 1;
-    background-color: var(--color-accent);
+    background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #907148 100%);
     color: var(--color-primary);
     border: none;
     padding: 18px 0;
@@ -1216,6 +1265,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     transition: var(--transition-standard);
+    cursor: pointer;
 }
 
 .product-hover-btn:hover {
@@ -1818,6 +1868,13 @@ footer {
     grid-template-columns: 1fr 1.1fr;
     gap: 80px;
     align-items: center;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px;
+    border-radius: 6px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .spotlight-img-col {
@@ -1827,8 +1884,32 @@ footer {
 .spotlight-img-frame {
     width: 100%;
     overflow: hidden;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border-thin);
+    background-color: var(--color-primary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    position: relative;
+}
+
+.spotlight-img-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.25) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: 0.75s;
+    z-index: 5;
+}
+
+.spotlight-grid:hover .spotlight-img-frame::after {
+    left: 150%;
 }
 
 .spotlight-img {
@@ -1898,15 +1979,19 @@ footer {
 }
 
 .review-card {
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border-thin);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px;
     text-align: left;
     transition: var(--transition-luxury);
+    border-radius: 4px;
 }
 
 .review-card:hover {
-    border-color: var(--color-accent);
+    border-color: rgba(197, 168, 128, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(197, 168, 128, 0.15);
     transform: translateY(-5px);
 }
 
