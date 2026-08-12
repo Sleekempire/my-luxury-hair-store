@@ -445,3 +445,51 @@ window.selectTexture = function(tabElement, imageUrl, title, description) {
         }, 250);
     }
 };
+
+// ==========================================================================
+// PRODUCT POD MINI-CAROUSEL CONTROLLERS
+// ==========================================================================
+
+window.changePodSlide = function(podId, direction) {
+    const wrapper = document.getElementById(`carousel-pod-${podId}`);
+    if (!wrapper) return;
+    
+    const slides = wrapper.querySelectorAll('.pod-carousel-slide');
+    let activeIndex = 0;
+    
+    slides.forEach((slide, idx) => {
+        if (slide.classList.contains('active')) {
+            activeIndex = idx;
+        }
+    });
+    
+    let nextIndex = activeIndex + direction;
+    if (nextIndex >= slides.length) nextIndex = 0;
+    if (nextIndex < 0) nextIndex = slides.length - 1;
+    
+    window.setPodSlide(podId, nextIndex);
+};
+
+window.setPodSlide = function(podId, index) {
+    const wrapper = document.getElementById(`carousel-pod-${podId}`);
+    if (!wrapper) return;
+    
+    const slides = wrapper.querySelectorAll('.pod-carousel-slide');
+    const dots = wrapper.querySelectorAll('.pod-dot');
+    
+    slides.forEach((slide, idx) => {
+        if (idx === index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+    
+    dots.forEach((dot, idx) => {
+        if (idx === index) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+};

@@ -1,8 +1,8 @@
 <!-- Hero Banner (Screenshot 1) -->
 <section class="enoleh-hero">
     <div class="enoleh-hero-bg">
-        <video autoplay loop muted playsinline class="enoleh-hero-img" style="object-fit: cover; width: 100%; height: 100%; opacity: 0.85;" poster="{{ 'hero_model.jpg' | asset_url }}&v=6">
-            <source src="{{ 'hero_video.mp4' | asset_url }}&v=6" type="video/mp4">
+        <video autoplay loop muted playsinline class="enoleh-hero-img" style="object-fit: cover; width: 100%; height: 100%; opacity: 0.85;" poster="{{ 'hero_model.jpg' | asset_url }}&v=7">
+            <source src="{{ 'hero_video.mp4' | asset_url }}&v=7" type="video/mp4">
         </video>
         <div class="enoleh-hero-overlay"></div>
     </div>
@@ -21,8 +21,21 @@
         <div class="enoleh-products-grid">
             <!-- Product 1 -->
             <div class="enoleh-product-card" onclick="openQuickView(1)">
-                <div class="enoleh-product-img-wrapper">
-                    <img src="{{ 'body_wave_wig.jpg' | asset_url }}&v=2" alt="Bernicia Bob (Frontal Wig)">
+                <div class="enoleh-product-img-wrapper" id="carousel-pod-1">
+                    <div class="pod-carousel-slides">
+                        <img src="{{ 'brown_bob_wig_clean.jpg' | asset_url }}&v=7" alt="Bernicia Bob (Frontal Wig) - Side View" class="pod-carousel-slide active">
+                        <img src="{{ 'brown_bob_wig_model.jpg' | asset_url }}&v=7" alt="Bernicia Bob (Frontal Wig) - Model View" class="pod-carousel-slide">
+                    </div>
+                    <button class="pod-carousel-arrow prev" onclick="event.stopPropagation(); changePodSlide(1, -1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="pod-carousel-arrow next" onclick="event.stopPropagation(); changePodSlide(1, 1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="pod-carousel-dots">
+                        <span class="pod-dot active" onclick="event.stopPropagation(); setPodSlide(1, 0)"></span>
+                        <span class="pod-dot" onclick="event.stopPropagation(); setPodSlide(1, 1)"></span>
+                    </div>
                 </div>
                 <div class="enoleh-product-info">
                     <h3 class="enoleh-product-name">muyigreenhair | Bernicia Bob (Frontal Wig)</h3>
@@ -30,9 +43,22 @@
                 </div>
             </div>
             <!-- Product 2 -->
-            <div class="enoleh-product-card" onclick="openQuickView(1)">
-                <div class="enoleh-product-img-wrapper">
-                    <img src="{{ 'curly_wig.jpg' | asset_url }}&v=2" alt="The Drama (Ocean Wave Frontal Wig)">
+            <div class="enoleh-product-card" onclick="openQuickView(2)">
+                <div class="enoleh-product-img-wrapper" id="carousel-pod-2">
+                    <div class="pod-carousel-slides">
+                        <img src="{{ 'black_wavy_wig_clean.jpg' | asset_url }}&v=7" alt="The Drama Frontal Wig - Mannequin View" class="pod-carousel-slide active">
+                        <img src="{{ 'black_wavy_wig_model.jpg' | asset_url }}&v=7" alt="The Drama Frontal Wig - Model View" class="pod-carousel-slide">
+                    </div>
+                    <button class="pod-carousel-arrow prev" onclick="event.stopPropagation(); changePodSlide(2, -1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="pod-carousel-arrow next" onclick="event.stopPropagation(); changePodSlide(2, 1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="pod-carousel-dots">
+                        <span class="pod-dot active" onclick="event.stopPropagation(); setPodSlide(2, 0)"></span>
+                        <span class="pod-dot" onclick="event.stopPropagation(); setPodSlide(2, 1)"></span>
+                    </div>
                 </div>
                 <div class="enoleh-product-info">
                     <h3 class="enoleh-product-name">muyigreenhair | The Drama (Ocean Wave 13x6 HD Frontal Wig)</h3>
@@ -40,10 +66,23 @@
                 </div>
             </div>
             <!-- Product 3 -->
-            <div class="enoleh-product-card" onclick="openQuickView(1)">
-                <div class="enoleh-product-img-wrapper">
-                    <div class="img-badge-text">muyigreenhair</div>
-                    <img src="{{ 'spotlight_wig.jpg' | asset_url }}&v=2" alt="The Drama Closure Wig">
+            <div class="enoleh-product-card" onclick="openQuickView(3)">
+                <div class="enoleh-product-img-wrapper" id="carousel-pod-3">
+                    <div class="img-badge-text-vertical">Back soon</div>
+                    <div class="pod-carousel-slides">
+                        <img src="{{ 'model_in_kitchen_clean.jpg' | asset_url }}&v=7" alt="The Drama Closure Wig - Model View" class="pod-carousel-slide active">
+                        <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=7" alt="The Drama Closure Wig - Bundle View" class="pod-carousel-slide">
+                    </div>
+                    <button class="pod-carousel-arrow prev" onclick="event.stopPropagation(); changePodSlide(3, -1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="pod-carousel-arrow next" onclick="event.stopPropagation(); changePodSlide(3, 1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="pod-carousel-dots">
+                        <span class="pod-dot active" onclick="event.stopPropagation(); setPodSlide(3, 0)"></span>
+                        <span class="pod-dot" onclick="event.stopPropagation(); setPodSlide(3, 1)"></span>
+                    </div>
                 </div>
                 <div class="enoleh-product-info">
                     <h3 class="enoleh-product-name">muyigreenhair | "The Drama" (26" Ocean Wave HD Closure Wig)</h3>
@@ -51,9 +90,22 @@
                 </div>
             </div>
             <!-- Product 4 -->
-            <div class="enoleh-product-card" onclick="openQuickView(1)">
-                <div class="enoleh-product-img-wrapper">
-                    <img src="{{ 'black_bob_wig.jpg' | asset_url }}&v=2" alt="Bernicia Bob (Closure Wig)">
+            <div class="enoleh-product-card" onclick="openQuickView(4)">
+                <div class="enoleh-product-img-wrapper" id="carousel-pod-4">
+                    <div class="pod-carousel-slides">
+                        <img src="{{ 'black_bob_wig_clean.jpg' | asset_url }}&v=7" alt="Bernicia Bob (Closure Wig) - Face View" class="pod-carousel-slide active">
+                        <img src="{{ 'black_bob_wig_model.jpg' | asset_url }}&v=7" alt="Bernicia Bob (Closure Wig) - Profile View" class="pod-carousel-slide">
+                    </div>
+                    <button class="pod-carousel-arrow prev" onclick="event.stopPropagation(); changePodSlide(4, -1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="pod-carousel-arrow next" onclick="event.stopPropagation(); changePodSlide(4, 1)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="pod-carousel-dots">
+                        <span class="pod-dot active" onclick="event.stopPropagation(); setPodSlide(4, 0)"></span>
+                        <span class="pod-dot" onclick="event.stopPropagation(); setPodSlide(4, 1)"></span>
+                    </div>
                 </div>
                 <div class="enoleh-product-info">
                     <h3 class="enoleh-product-name">muyigreenhair | Bernicia Bob (Closure Wig)</h3>
