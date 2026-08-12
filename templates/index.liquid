@@ -121,12 +121,13 @@
 <!-- Texture Bundles Slider Carousel (Screenshot 3) -->
 <section class="enoleh-bundles-section">
     <div class="container text-center">
-        <div class="enoleh-bundles-carousel-wrapper">
-            <div class="enoleh-bundles-grid">
+        <h2 class="enoleh-loved-title" style="margin-bottom: 50px;">Texture Bundles</h2>
+        <div class="enoleh-bundles-carousel-wrapper" id="bundles-carousel-container">
+            <div class="enoleh-bundles-grid" id="bundles-slider">
                 <!-- Bundle Item 1 -->
                 <div class="enoleh-bundle-card">
                     <div class="enoleh-bundle-img-wrapper">
-                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=2" alt="Classic Wave">
+                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=8" alt="Classic Wave">
                     </div>
                     <div class="enoleh-bundle-info">
                         <h3 class="enoleh-bundle-name">muyigreenhair | Classic Wave</h3>
@@ -136,7 +137,7 @@
                 <!-- Bundle Item 2 -->
                 <div class="enoleh-bundle-card">
                     <div class="enoleh-bundle-img-wrapper">
-                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=2" alt="Ocean Wave">
+                        <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=8" alt="Ocean Wave">
                     </div>
                     <div class="enoleh-bundle-info">
                         <h3 class="enoleh-bundle-name">muyigreenhair | Ocean Wave</h3>
@@ -146,22 +147,52 @@
                 <!-- Bundle Item 3 -->
                 <div class="enoleh-bundle-card">
                     <div class="enoleh-bundle-img-wrapper">
-                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=2" alt="Satin Strand">
+                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=8" alt="Satin Strand">
                     </div>
                     <div class="enoleh-bundle-info">
                         <h3 class="enoleh-bundle-name">muyigreenhair | Satin Strand</h3>
                         <span class="enoleh-bundle-price">From £179.85</span>
                     </div>
                 </div>
+                <!-- Bundle Item 4 -->
+                <div class="enoleh-bundle-card">
+                    <div class="enoleh-bundle-img-wrapper">
+                        <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=8" alt="Silk Straight">
+                    </div>
+                    <div class="enoleh-bundle-info">
+                        <h3 class="enoleh-bundle-name">muyigreenhair | Silk Straight</h3>
+                        <span class="enoleh-bundle-price">From £159.00</span>
+                    </div>
+                </div>
+                <!-- Bundle Item 5 -->
+                <div class="enoleh-bundle-card">
+                    <div class="enoleh-bundle-img-wrapper">
+                        <img src="{{ 'straight_bundles.jpg' | asset_url }}&v=8" alt="Body Wave">
+                    </div>
+                    <div class="enoleh-bundle-info">
+                        <h3 class="enoleh-bundle-name">muyigreenhair | Body Wave</h3>
+                        <span class="enoleh-bundle-price">From £175.00</span>
+                    </div>
+                </div>
+                <!-- Bundle Item 6 -->
+                <div class="enoleh-bundle-card">
+                    <div class="enoleh-bundle-img-wrapper">
+                        <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=8" alt="Deep Curly">
+                    </div>
+                    <div class="enoleh-bundle-info">
+                        <h3 class="enoleh-bundle-name">muyigreenhair | Deep Curly</h3>
+                        <span class="enoleh-bundle-price">From £185.00</span>
+                    </div>
+                </div>
             </div>
             <!-- Carousel dots indicators -->
             <div class="enoleh-carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot active" onclick="scrollToBundle(0)"></span>
+                <span class="dot" onclick="scrollToBundle(1)"></span>
+                <span class="dot" onclick="scrollToBundle(2)"></span>
+                <span class="dot" onclick="scrollToBundle(3)"></span>
+                <span class="dot" onclick="scrollToBundle(4)"></span>
+                <span class="dot" onclick="scrollToBundle(5)"></span>
             </div>
         </div>
     </div>

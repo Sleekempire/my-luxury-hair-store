@@ -493,3 +493,47 @@ window.setPodSlide = function(podId, index) {
         }
     });
 };
+
+// ==========================================================================
+// TEXTURE BUNDLES CAROUSEL CONTROLLERS
+// ==========================================================================
+
+window.scrollToBundle = function(index) {
+    const slider = document.getElementById('bundles-slider');
+    if (!slider) return;
+    
+    const card = slider.querySelector('.enoleh-bundle-card');
+    if (!card) return;
+    
+    const cardWidth = card.offsetWidth + 30; // Card width + gap
+    
+    slider.scrollTo({
+        left: cardWidth * index,
+        behavior: 'smooth'
+    });
+};
+
+// Listen to scroll events on DOMContentLoaded to update dot indicators
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('bundles-slider');
+    const container = document.getElementById('bundles-carousel-container');
+    if (slider && container) {
+        const dots = container.querySelectorAll('.enoleh-carousel-dots .dot');
+        
+        slider.addEventListener('scroll', () => {
+            const card = slider.querySelector('.enoleh-bundle-card');
+            if (!card) return;
+            
+            const cardWidth = card.offsetWidth + 30;
+            const index = Math.round(slider.scrollLeft / cardWidth);
+            
+            dots.forEach((dot, idx) => {
+                if (idx === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+    }
+});

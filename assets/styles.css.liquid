@@ -3786,19 +3786,38 @@ footer {
 }
 
 .enoleh-bundles-carousel-wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .enoleh-bundles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-bottom: 40px;
+    display: flex !important;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 45px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 5px;
+}
+
+.enoleh-bundles-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .enoleh-bundle-card {
+    flex: 0 0 calc(33.333% - 20px);
     text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.4s ease;
+}
+
+.enoleh-bundle-card:hover {
+    transform: translateY(-4px);
 }
 
 .enoleh-bundle-img-wrapper {
@@ -3949,7 +3968,10 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
     .enoleh-bundles-grid {
-        grid-template-columns: 1fr;
+        display: flex !important;
+    }
+    .enoleh-bundle-card {
+        flex: 0 0 calc(50% - 15px) !important;
     }
     .enoleh-gallery-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -3968,6 +3990,9 @@ footer {
 @media (max-width: 576px) {
     .enoleh-products-grid {
         grid-template-columns: 1fr;
+    }
+    .enoleh-bundle-card {
+        flex: 0 0 100% !important;
     }
     .enoleh-gallery-grid {
         grid-template-columns: 1fr;
