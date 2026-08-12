@@ -189,7 +189,7 @@ function renderProducts(productsList) {
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">${product.title}</h3>
-                    <span class="product-price">$${product.price.toFixed(2)}</span>
+                    <span class="product-price">£${product.price.toFixed(2)}</span>
                 </div>
             `;
 
@@ -224,7 +224,7 @@ function openQuickView(id) {
         </div>
         <div class="modal-info-col">
             <h3>${product.title}</h3>
-            <span class="modal-price" id="modal-product-price">$${product.price.toFixed(2)}</span>
+            <span class="modal-price" id="modal-product-price">£${product.price.toFixed(2)}</span>
             <p class="modal-desc">${product.description}</p>
             
             <div class="modal-options-section">
@@ -342,7 +342,7 @@ function updateCartUI() {
                 <div class="cart-item-details">
                     <h4>${item.title}</h4>
                     <div class="cart-item-variant">${item.length}</div>
-                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                    <div class="cart-item-price">£${item.price.toFixed(2)}</div>
                     <div class="cart-item-qty">
                         <button class="qty-btn dec-qty" data-index="${index}">-</button>
                         <span class="qty-val">${item.qty}</span>
@@ -380,7 +380,7 @@ function updateCartUI() {
             cartItemsList.appendChild(itemEl);
         });
 
-        cartSubtotalValue.textContent = `$${cartSubtotal.toFixed(2)}`;
+        cartSubtotalValue.textContent = `£${cartSubtotal.toFixed(2)}`;
     }
 }
 

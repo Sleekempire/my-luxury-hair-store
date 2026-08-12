@@ -166,14 +166,20 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
+#main-header.header-transparent .logo-text,
+#main-header.header-transparent .nav-link,
+#main-header.header-transparent .utility-btn {
+    color: #ffffff !important;
+}
+
 #main-header.header-scrolled .logo-text,
 #main-header.header-scrolled .nav-link,
 #main-header.header-scrolled .utility-btn {
-    color: var(--color-secondary);
+    color: #000000 !important;
 }
 
-#main-header.header-scrolled .nav-link::after {
-    background-color: var(--color-accent);
+.nav-link::after {
+    display: none !important;
 }
 
 .header-container {
@@ -247,14 +253,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-text {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.38em;
-    color: #ffffff;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.4rem !important;
+    font-weight: 300 !important;
+    text-transform: lowercase !important;
+    letter-spacing: 0.02em !important;
+    color: var(--color-secondary);
     display: inline-block;
-    padding-left: 0.38em; /* Offset letter-spacing centering issue */
+    padding-left: 0 !important;
     transition: var(--transition-luxury);
 }
 
@@ -1756,8 +1762,8 @@ footer {
 
 /* Announcement Bar */
 .announcement-bar {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
+    background-color: #5A1827;
+    color: #ffffff;
     text-align: center;
     padding: 10px 0;
     font-size: 0.68rem;
@@ -3855,14 +3861,14 @@ footer {
     }
 }
 
-/* Layout 1 Specific Overrides for JS-Generated Product Cards */
-.design-mode-1 .products-grid {
+/* Global Overrides for Product Cards and Grids (Enoleh Minimalist Mode) */
+.products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
 }
 
-.design-mode-1 .product-card {
+.product-card {
     background-color: #ffffff !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -3872,53 +3878,53 @@ footer {
     overflow: hidden;
 }
 
-.design-mode-1 .product-card:hover {
+.product-card:hover {
     transform: translateY(-2px) !important;
     box-shadow: none !important;
 }
 
-.design-mode-1 .product-badge {
+.product-badge {
     display: none !important; /* Hide badge to keep it raw and minimal */
 }
 
-.design-mode-1 .product-img-wrapper {
+.product-img-wrapper {
     background-color: #ffffff !important;
     height: 480px !important;
     border-radius: 0 !important;
 }
 
-.design-mode-1 .product-img-wrapper img {
+.product-img-wrapper img {
     height: 100% !important;
     object-fit: cover !important;
 }
 
-.design-mode-1 .product-info {
+.product-info {
     padding: 20px 0 0 0 !important;
     text-align: center !important;
     background: none !important;
 }
 
-.design-mode-1 .product-title {
+.product-title {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.78rem !important;
     font-weight: 700 !important;
     color: #000000 !important;
     margin-bottom: 6px !important;
-    text-transform: lowercase !important;
+    text-transform: none !important;
 }
 
-.design-mode-1 .product-price {
+.product-price {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.75rem !important;
     color: #777777 !important;
     font-weight: 400 !important;
 }
 
-.design-mode-1 .product-hover-actions {
+.product-hover-actions {
     gap: 10px !important;
 }
 
-.design-mode-1 .product-hover-btn {
+.product-hover-btn {
     border-radius: 0 !important;
     font-size: 0.72rem !important;
     font-weight: 700 !important;
