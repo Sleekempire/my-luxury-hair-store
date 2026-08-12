@@ -160,35 +160,7 @@ function setupEventListeners() {
             renderProducts(results);
             window.location.hash = "#featured-products";
         });
-    // Design Switcher Panel Event Listeners
-    const switcherPanel = document.getElementById('design-switcher-panel');
-    if (switcherPanel) {
-        const switcherButtons = switcherPanel.querySelectorAll('.switcher-btn');
-        switcherButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const designId = e.target.dataset.design;
-                
-                // Toggle active switcher button
-                switcherButtons.forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-
-                // Toggle active layout wrapper
-                document.querySelectorAll('.design-layout-wrapper').forEach(wrapper => {
-                    wrapper.classList.remove('active');
-                });
-                const targetLayout = document.getElementById(`design-layout-${designId}`);
-                if (targetLayout) {
-                    targetLayout.classList.add('active');
-                }
-
-                // Add body class for global styling changes
-                document.body.className = `design-mode-${designId}`;
-
-                // Smooth scroll to top when changing design
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-    }
+    });
 }
 
 // Render Products Grid
