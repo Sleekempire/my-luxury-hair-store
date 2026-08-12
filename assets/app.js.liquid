@@ -445,3 +445,31 @@ window.toggleAccordion = function(element) {
         if (icon) icon.className = 'fa-solid fa-minus';
     }
 };
+
+// Texture Visualizer Switcher (Design 1)
+window.selectTexture = function(tabElement, imageUrl, title, description) {
+    const parent = tabElement.closest('.texture-visualizer-section');
+    if (!parent) return;
+    
+    // Toggle active tab state
+    parent.querySelectorAll('.texture-tab').forEach(t => t.classList.remove('active'));
+    tabElement.classList.add('active');
+    
+    // Animate image transition
+    const img = parent.querySelector('.visualizer-img');
+    const textTitle = parent.querySelector('.visualizer-title');
+    const textDesc = parent.querySelector('.visualizer-desc');
+    
+    if (img) {
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.96)';
+        
+        setTimeout(() => {
+            img.src = imageUrl;
+            if (textTitle) textTitle.textContent = title;
+            if (textDesc) textDesc.textContent = description;
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+        }, 250);
+    }
+};

@@ -3174,6 +3174,386 @@ footer {
     .grid-royal {
         grid-template-columns: 1fr;
     }
+}}
+
+/* --------------------------------------------------------------------------
+   DESIGN 1: ULTRA-CREATIVE EDITORIAL MASTERPIECE
+   -------------------------------------------------------------------------- */
+.editorial-hero-section {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--color-primary);
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
 }
 
+.hero-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bodoni Moda', serif;
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(180, 151, 112, 0.03);
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    z-index: 1;
+    text-transform: uppercase;
+}
 
+.hero-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.hero-editorial-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 4.8rem;
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.hero-editorial-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 45px;
+    max-width: 480px;
+}
+
+.hero-editorial-cta {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.editorial-discover-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    transition: var(--transition-standard);
+}
+
+.editorial-discover-link:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+.editorial-discover-link i {
+    margin-left: 10px;
+}
+
+.editorial-image-frame {
+    position: relative;
+    padding: 15px;
+}
+
+.editorial-hero-img {
+    width: 100%;
+    height: 580px;
+    object-fit: cover;
+    border-radius: 290px 290px 0 0; /* Arched Top - extremely creative and couture! */
+    border: 1px solid var(--color-border-thin);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(15, 62, 50, 0.08);
+}
+
+.gold-frame-offset {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: calc(100% - 30px);
+    height: 580px;
+    border: 1.5px solid var(--color-accent);
+    border-radius: 290px 290px 0 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Lookbook section */
+.lookbook-section {
+    padding: 140px 0;
+    border-top: 1px solid var(--color-border-thin);
+    background-color: var(--color-bg-dark);
+}
+
+.lookbook-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.lookbook-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+}
+
+.lookbook-card {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-border-thin);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.lookbook-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+.lookbook-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 350px;
+    transition: var(--transition-luxury);
+}
+
+.lookbook-card:hover .lookbook-img {
+    transform: scale(1.04);
+}
+
+.lookbook-card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(5, 26, 21, 0.4) 0%, rgba(5, 26, 21, 0) 100%);
+    opacity: 0.7;
+}
+
+.lookbook-card-content {
+    padding: 40px;
+}
+
+.card-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.lookbook-card-content h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.lookbook-card-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 30px;
+}
+
+.lookbook-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.lookbook-btn:hover {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+.lookbook-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lookbook-card-split {
+    display: flex;
+    flex-direction: row;
+    height: calc(50% - 20px);
+}
+
+.lookbook-card-split .lookbook-img-wrapper {
+    width: 45%;
+}
+
+.lookbook-card-content-split {
+    width: 55%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lookbook-card-content-split h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.lookbook-link {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+}
+
+.lookbook-link:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+/* Texture Visualizer Section */
+.texture-visualizer-section {
+    padding: 140px 0;
+    background-color: var(--color-primary);
+}
+
+.visualizer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.visualizer-frame {
+    position: relative;
+    padding: 15px;
+}
+
+.visualizer-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border: 1px solid var(--color-border-thin);
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.visualizer-frame-border {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: calc(100% - 30px);
+    height: 500px;
+    border: 1px solid var(--color-accent);
+    z-index: 1;
+}
+
+.visualizer-title-section {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin: 15px 0 35px 0;
+}
+
+.texture-tabs-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+.texture-tab {
+    background: none;
+    border: 1px solid var(--color-border-medium);
+    padding: 12px 25px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    color: var(--color-secondary);
+    transition: var(--transition-standard);
+}
+
+.texture-tab.active, .texture-tab:hover {
+    background-color: var(--color-secondary);
+    color: #ffffff;
+    border-color: var(--color-secondary);
+}
+
+.visualizer-details h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.visualizer-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 35px;
+}
+
+.visualizer-specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.visualizer-specs-list li {
+    font-size: 0.9rem;
+}
+
+.spec-bullet {
+    color: var(--color-accent);
+    margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+    .hero-editorial-grid, .lookbook-grid, .visualizer-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .hero-editorial-title {
+        font-size: 3rem;
+    }
+    .editorial-hero-img, .gold-frame-offset {
+        height: 450px;
+    }
+    .lookbook-card-split {
+        flex-direction: column;
+        height: auto;
+    }
+    .lookbook-card-split .lookbook-img-wrapper {
+        width: 100%;
+        height: 280px;
+    }
+    .lookbook-card-content-split {
+        width: 100%;
+        padding: 30px;
+    }
+    .visualizer-img, .visualizer-frame-border {
+        height: 380px;
+    }
+}
