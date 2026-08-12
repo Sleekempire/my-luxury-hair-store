@@ -200,18 +200,131 @@
 
 <!-- Seamless Lifestyle Gallery Row (Screenshot 4) -->
 <section class="enoleh-gallery-section">
-    <div class="enoleh-gallery-grid">
-        <div class="enoleh-gallery-item">
-            <img src="{{ 'hero_model.jpg' | asset_url }}&v=2" alt="Lifestyle Model 1">
-        </div>
-        <div class="enoleh-gallery-item">
-            <img src="{{ 'body_wave_wig.jpg' | asset_url }}&v=2" alt="Lifestyle Model 2">
-        </div>
-        <div class="enoleh-gallery-item">
-            <img src="{{ 'spotlight_wig.jpg' | asset_url }}&v=2" alt="Lifestyle Model 3">
-        </div>
-        <div class="enoleh-gallery-item">
-            <img src="{{ 'curly_wig.jpg' | asset_url }}&v=2" alt="Lifestyle Model 4">
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- Set 1 -->
+            <div class="marquee-item" onclick="openQuickView(1)">
+                <img src="{{ 'brown_bob_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 1">
+                <div class="shop-look-badge">
+                    <img src="{{ 'brown_bob_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Bernicia Bob Frontal">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | bernicia bob</span>
+                        <span class="shop-look-price">From £891.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(2)">
+                <img src="{{ 'black_wavy_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 2">
+                <div class="shop-look-badge">
+                    <img src="{{ 'black_wavy_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="The Drama Frontal">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | the drama frontal</span>
+                        <span class="shop-look-price">From £1,785.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(3)">
+                <img src="{{ 'model_in_kitchen_clean.jpg' | asset_url }}&v=12" alt="Editorial Look 3">
+                <div class="shop-look-badge">
+                    <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="The Drama Closure">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | the drama closure</span>
+                        <span class="shop-look-price">From £1,703.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(4)">
+                <img src="{{ 'black_bob_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 4">
+                <div class="shop-look-badge">
+                    <img src="{{ 'black_bob_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Bernicia Bob Closure">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | bernicia bob closure</span>
+                        <span class="shop-look-price">From £828.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(1)">
+                <img src="{{ 'hero_model.jpg' | asset_url }}&v=12" alt="Editorial Look 5">
+                <div class="shop-look-badge">
+                    <img src="{{ 'wigs_on_mops_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Classic Wave">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | classic wave</span>
+                        <span class="shop-look-price">From £164.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(3)">
+                <img src="{{ 'founder_portrait.jpg' | asset_url }}&v=12" alt="Editorial Look 6">
+                <div class="shop-look-badge">
+                    <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Ocean Wave">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | ocean wave</span>
+                        <span class="shop-look-price">From £164.85</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Set 2 (Duplicate for infinite seamless scroll) -->
+            <div class="marquee-item" onclick="openQuickView(1)">
+                <img src="{{ 'brown_bob_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 1">
+                <div class="shop-look-badge">
+                    <img src="{{ 'brown_bob_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Bernicia Bob Frontal">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | bernicia bob</span>
+                        <span class="shop-look-price">From £891.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(2)">
+                <img src="{{ 'black_wavy_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 2">
+                <div class="shop-look-badge">
+                    <img src="{{ 'black_wavy_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="The Drama Frontal">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | the drama frontal</span>
+                        <span class="shop-look-price">From £1,785.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(3)">
+                <img src="{{ 'model_in_kitchen_clean.jpg' | asset_url }}&v=12" alt="Editorial Look 3">
+                <div class="shop-look-badge">
+                    <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="The Drama Closure">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | the drama closure</span>
+                        <span class="shop-look-price">From £1,703.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(4)">
+                <img src="{{ 'black_bob_wig_model.jpg' | asset_url }}&v=12" alt="Editorial Look 4">
+                <div class="shop-look-badge">
+                    <img src="{{ 'black_bob_wig_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Bernicia Bob Closure">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | bernicia bob closure</span>
+                        <span class="shop-look-price">From £828.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(1)">
+                <img src="{{ 'hero_model.jpg' | asset_url }}&v=12" alt="Editorial Look 5">
+                <div class="shop-look-badge">
+                    <img src="{{ 'wigs_on_mops_clean.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Classic Wave">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | classic wave</span>
+                        <span class="shop-look-price">From £164.85</span>
+                    </div>
+                </div>
+            </div>
+            <div class="marquee-item" onclick="openQuickView(3)">
+                <img src="{{ 'founder_portrait.jpg' | asset_url }}&v=12" alt="Editorial Look 6">
+                <div class="shop-look-badge">
+                    <img src="{{ 'premium_bundle.jpg' | asset_url }}&v=12" class="shop-look-thumb" alt="Ocean Wave">
+                    <div class="shop-look-info">
+                        <span class="shop-look-brand">muyigreenhair | ocean wave</span>
+                        <span class="shop-look-price">From £164.85</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
