@@ -41,27 +41,20 @@
             <!-- Navigation Links Left -->
             <nav class="desktop-nav nav-left">
                 <ul>
-                    <li><a href="/" class="nav-link active">Home</a></li>
-                    <li><a href="#featured-products" class="nav-link">Shop Wigs</a></li>
-                    <li><a href="#collections" class="nav-link">Bundles</a></li>
+                    <li><a href="#featured-products" class="nav-link active">Shop</a></li>
+                    <li><a href="#footer" class="nav-link">Our Story</a></li>
+                    <li><a href="#footer" class="nav-link">FAQ</a></li>
                 </ul>
             </nav>
 
             <!-- Centered Logo -->
             <div class="logo-container">
-                <a href="/" class="logo-text">MUYIGREENHAIR</a>
+                <a href="/" class="logo-text" style="text-transform: lowercase; font-family: 'Playfair Display', serif;">muyigreenhair</a>
             </div>
 
-            <!-- Navigation Links Right -->
-            <nav class="desktop-nav nav-right">
-                <ul>
-                    <li><a href="#collections" class="nav-link">Closures & Frontals</a></li>
-                    <li><a href="#footer" class="nav-link">About Us</a></li>
-                </ul>
-            </nav>
-
-            <!-- Utility Icons -->
+            <!-- Navigation Links Right / Utilities -->
             <div class="header-utilities">
+                <span class="currency-picker" style="font-size: 0.75rem; letter-spacing: 0.1em; font-weight: 500; margin-right: 15px; cursor: pointer;">GBP £ <i class="fa-solid fa-chevron-down" style="font-size: 0.55rem; margin-left: 2px;"></i></span>
                 <button class="utility-btn" id="search-trigger" aria-label="Search Store">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -69,8 +62,7 @@
                     <i class="fa-regular fa-user"></i>
                 </a>
                 <button class="utility-btn" id="cart-trigger" aria-label="Shopping Cart">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="cart-badge" id="cart-badge-count">0</span>
+                    <i class="fa-solid fa-bag-shopping"></i> (<span id="cart-badge-count">0</span>)
                 </button>
             </div>
         </div>
@@ -155,54 +147,38 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer">
-        <div class="container footer-grid">
-            <div class="footer-col brand-col">
-                <h3 class="footer-logo">MUYIGREENHAIR</h3>
-                <p class="brand-mission">A leading brand in luxury hair wigs and bundles, providing high-fashion, ethically-sourced human hair collections worldwide.</p>
-                <div class="social-links">
-                    <a href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-pinterest-p"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="javascript:void(0)"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
+    <footer id="footer" style="background-color:#ffffff; color:#000000; padding:80px 0 40px 0; border-top:1px solid #eaeaea;">
+        <div class="container footer-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; margin-bottom:60px;">
             <div class="footer-col">
-                <h4>Collections</h4>
-                <ul>
-                    <li><a href="#featured-products">HD Lace Wigs</a></li>
-                    <li><a href="#featured-products">Straight & Body Wave Bundles</a></li>
-                    <li><a href="#featured-products">Deep Curly & Custom Units</a></li>
-                    <li><a href="#collections">Lace Frontals</a></li>
+                <h4 style="font-size:0.75rem; text-transform:none; font-weight:700; margin-bottom:20px; color:#000000; font-family:'Inter',sans-serif;">About</h4>
+                <ul style="list-style:none; padding:0; margin:0;">
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Our story</a></li>
+                    <li style="margin-bottom:12px;"><a href="mailto:support@muyigreenhair.com" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Contact us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Customer Service</h4>
-                <ul>
-                    <li><a href="javascript:void(0)">Shipping Policy</a></li>
-                    <li><a href="javascript:void(0)">Return & Refund Policy</a></li>
-                    <li><a href="javascript:void(0)">FAQs</a></li>
-                    <li><a href="javascript:void(0)">Track Order</a></li>
+                <h4 style="font-size:0.75rem; text-transform:none; font-weight:700; margin-bottom:20px; color:#000000; font-family:'Inter',sans-serif;">Customer Care</h4>
+                <ul style="list-style:none; padding:0; margin:0;">
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">FAQ</a></li>
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Care instructions</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Our Company</h4>
-                <ul>
-                    <li><a href="javascript:void(0)">About Muyigreenhair</a></li>
-                    <li><a href="javascript:void(0)">Ethical Sourcing</a></li>
-                    <li><a href="mailto:support@muyigreenhair.com">Contact Us</a></li>
-                    <li><a href="javascript:void(0)">Careers</a></li>
+                <h4 style="font-size:0.75rem; text-transform:none; font-weight:700; margin-bottom:20px; color:#000000; font-family:'Inter',sans-serif;">Legal</h4>
+                <ul style="list-style:none; padding:0; margin:0;">
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Privacy policy</a></li>
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Terms of service</a></li>
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Refund policy</a></li>
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Contact information</a></li>
+                    <li style="margin-bottom:12px;"><a href="javascript:void(0)" style="font-size:0.75rem; color:#111111; font-family:'Inter',sans-serif; text-decoration:none;">Cookie preferences</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container bottom-flex">
-                <p>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. All rights reserved.</p>
-                <div class="payment-methods">
-                    <i class="fa-brands fa-cc-visa"></i>
-                    <i class="fa-brands fa-cc-mastercard"></i>
-                    <i class="fa-brands fa-cc-apple-pay"></i>
-                    <i class="fa-brands fa-cc-paypal"></i>
+        <div class="footer-bottom" style="border-top:1px solid #eaeaea; padding-top:25px;">
+            <div class="container bottom-flex" style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:#777777; font-family:'Inter',sans-serif;">
+                <p>&copy; {{ 'now' | date: "%Y" }} muyigreenhair</p>
+                <div class="footer-instagram-link">
+                    <a href="https://instagram.com" target="_blank" style="color:#777777; text-decoration:none;">Instagram</a>
                 </div>
             </div>
         </div>

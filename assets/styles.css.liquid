@@ -1,16 +1,16 @@
-/* State-of-the-Art Obsidian Dark Mode Luxury Styling System */
+/* State-of-the-Art Enoleh-Style Minimalist Luxury Styling System */
 
 :root {
-    --color-primary: #050505;          /* Obsidian Jet Black */
-    --color-secondary: #ffffff;        /* Pure White */
-    --color-bg-dark: #0a0a0a;          /* Deep Velvet Black */
-    --color-bg-card: #121212;          /* Matte Charcoal for Cards/Drawers */
-    --color-accent: #c5a880;           /* Luxury Muted Champagne Gold */
-    --color-accent-hover: #e5cda8;     /* Brighter Gold on hover */
-    --color-text-light: #f5f5f7;       /* Soft White/Silver for Primary Text */
-    --color-text-muted: #8e8e93;       /* Apple Muted Gray for Secondary Text */
-    --color-border-thin: rgba(255, 255, 255, 0.05); /* Ultra-fine line */
-    --color-border-medium: rgba(255, 255, 255, 0.1);
+    --color-primary: #ffffff;          /* Pure White Background */
+    --color-secondary: #000000;        /* Pure Black Accents */
+    --color-bg-dark: #fafafa;          /* Soft Off-White for alternations */
+    --color-bg-card: #ffffff;          /* Pure White for Card Panels */
+    --color-accent: #000000;           /* Pure Black Accent */
+    --color-accent-hover: #333333;     /* Dark Charcoal on Hover */
+    --color-text-light: #000000;       /* Pure Black for Primary Text */
+    --color-text-muted: #777777;       /* Muted Slate Gray */
+    --color-border-thin: rgba(0, 0, 0, 0.08); /* Ultra-fine line */
+    --color-border-medium: rgba(0, 0, 0, 0.15);
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -113,25 +113,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-gold {
-    background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #907148 100%);
-    color: var(--color-primary);
-    border: 1px solid rgba(197, 168, 128, 0.8);
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
     font-weight: 600;
-    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 0 !important;
+    box-shadow: none !important;
     transition: var(--transition-standard);
 }
 
 .btn-gold:hover {
-    color: var(--color-primary) !important;
-    border-color: #ebd1a9;
-    box-shadow: 0 8px 30px rgba(197, 168, 128, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
+    background-color: #333333;
+    color: #ffffff !important;
+    border-color: #333333;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 .btn-outline {
-    background-color: transparent;
-    color: var(--color-secondary);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 .btn-outline:hover {
@@ -155,11 +159,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-header.header-scrolled {
-    background-color: rgba(5, 5, 5, 0.85);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 #main-header.header-scrolled .logo-text,
@@ -607,7 +611,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(5, 5, 5, 0.99);
+    background-color: rgba(255, 255, 255, 0.99);
     z-index: 3000;
     display: flex;
     align-items: center;
@@ -3553,4 +3557,458 @@ footer {
     .visualizer-img, .visualizer-frame-border {
         height: 380px;
     }
+}
+}
+
+/* ==========================================================================
+   ENOLEH MINIMALIST LUXURY HOMEPAGE CLASSES (DESIGN 1 OVERRIDES)
+   ========================================================================== */
+
+.enoleh-hero {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.enoleh-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.enoleh-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.enoleh-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 2;
+}
+
+.enoleh-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    text-align: left;
+}
+
+.enoleh-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.enoleh-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.enoleh-hero-btn {
+    display: inline-block;
+    padding: 16px 45px;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.enoleh-hero-btn:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Most Loved Products Section */
+.enoleh-loved-section {
+    padding: 120px 0 80px 0;
+    background-color: #ffffff;
+}
+
+.enoleh-loved-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 60px;
+    color: #000000;
+}
+
+.enoleh-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.enoleh-product-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+
+.enoleh-product-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    aspect-ratio: 3/4;
+}
+
+.enoleh-product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enoleh-product-card:hover .enoleh-product-img-wrapper img {
+    transform: scale(1.03);
+}
+
+.img-badge-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #ffffff;
+    z-index: 5;
+    pointer-events: none;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.enoleh-product-info {
+    padding: 5px 10px;
+}
+
+.enoleh-product-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    text-transform: lowercase;
+}
+
+.enoleh-product-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+/* Bundles Slider Section */
+.enoleh-bundles-section {
+    padding: 60px 0 100px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #eaeaea;
+}
+
+.enoleh-bundles-carousel-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.enoleh-bundles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.enoleh-bundle-card {
+    text-align: center;
+}
+
+.enoleh-bundle-img-wrapper {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.enoleh-bundle-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.enoleh-bundle-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 6px;
+    text-transform: lowercase;
+}
+
+.enoleh-bundle-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #777777;
+}
+
+.enoleh-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.enoleh-carousel-dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #eaeaea;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enoleh-carousel-dots .dot.active {
+    background-color: #000000;
+}
+
+/* Seamless Gallery Row */
+.enoleh-gallery-section {
+    padding: 0;
+}
+
+.enoleh-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0; /* Seamless lookbook grid! */
+}
+
+.enoleh-gallery-item {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.enoleh-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enoleh-gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* Newsletter Section */
+.enoleh-newsletter-section {
+    padding: 140px 0;
+    background-color: #ffffff;
+}
+
+.enoleh-newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.enoleh-newsletter-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.enoleh-newsletter-form {
+    display: flex;
+    max-width: 580px;
+    margin: 0 auto;
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.enoleh-newsletter-input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+}
+
+.enoleh-newsletter-input::placeholder {
+    color: #aaaaaa;
+}
+
+.enoleh-newsletter-dots-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #777777;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.enoleh-newsletter-submit-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enoleh-newsletter-submit-btn:hover {
+    background-color: #333333;
+}
+
+@media (max-width: 991px) {
+    .enoleh-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .enoleh-bundles-grid {
+        grid-template-columns: 1fr;
+    }
+    .enoleh-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .enoleh-hero {
+        height: 70vh;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 60px;
+    }
+    .enoleh-hero-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .enoleh-products-grid {
+        grid-template-columns: 1fr;
+    }
+    .enoleh-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .enoleh-newsletter-form {
+        flex-direction: column;
+        border-bottom: none;
+        gap: 15px;
+    }
+    .enoleh-newsletter-input {
+        width: 100%;
+        border-bottom: 1.5px solid #000000;
+        padding-bottom: 10px;
+    }
+    .enoleh-newsletter-dots-btn {
+        display: none;
+    }
+    .enoleh-newsletter-submit-btn {
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+/* Layout 1 Specific Overrides for JS-Generated Product Cards */
+.design-mode-1 .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.design-mode-1 .product-card {
+    background-color: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.design-mode-1 .product-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: none !important;
+}
+
+.design-mode-1 .product-badge {
+    display: none !important; /* Hide badge to keep it raw and minimal */
+}
+
+.design-mode-1 .product-img-wrapper {
+    background-color: #ffffff !important;
+    height: 480px !important;
+    border-radius: 0 !important;
+}
+
+.design-mode-1 .product-img-wrapper img {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.design-mode-1 .product-info {
+    padding: 20px 0 0 0 !important;
+    text-align: center !important;
+    background: none !important;
+}
+
+.design-mode-1 .product-title {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    margin-bottom: 6px !important;
+    text-transform: lowercase !important;
+}
+
+.design-mode-1 .product-price {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.75rem !important;
+    color: #777777 !important;
+    font-weight: 400 !important;
+}
+
+.design-mode-1 .product-hover-actions {
+    gap: 10px !important;
+}
+
+.design-mode-1 .product-hover-btn {
+    border-radius: 0 !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
 }

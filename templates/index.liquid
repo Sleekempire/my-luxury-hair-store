@@ -1,201 +1,145 @@
-<!-- Layout 1: The High-Fashion Editorial -->
+<!-- Layout 1: The High-Fashion Editorial (Enoleh Minimalist Mode) -->
 <div class="design-layout-wrapper active" id="design-layout-1">
-    <!-- Editorial Hero Section -->
-    <section class="editorial-hero-section">
-        <div class="hero-watermark">MUYI</div>
-        <div class="container hero-editorial-grid">
-            <div class="hero-editorial-left">
-                <span class="hero-tag">THE RAW COLLECTIVE</span>
-                <h1 class="hero-editorial-title">Artistry<br>In Every<br>Strand</h1>
-                <p class="hero-editorial-desc">Ethically sourced, single-donor raw Burmese and Cambodian hair. Designed for individuals who demand uncompromising purity, thick cuticles, and natural movement.</p>
-                <div class="hero-editorial-cta">
-                    <a href="#featured-products" class="btn btn-gold">Enter The Boutique</a>
-                    <a href="#visualizer" class="editorial-discover-link">Explore Textures <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-            </div>
-            <div class="hero-editorial-right">
-                <div class="editorial-image-frame">
-                    <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Muyigreenhair Editorial Model" class="editorial-hero-img">
-                    <div class="gold-frame-offset"></div>
-                </div>
-            </div>
+    <!-- Hero Banner (Screenshot 1) -->
+    <section class="enoleh-hero">
+        <div class="enoleh-hero-bg">
+            <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Muyigreenhair boutique model" class="enoleh-hero-img">
+            <div class="enoleh-hero-overlay"></div>
+        </div>
+        <div class="enoleh-hero-content">
+            <h1 class="enoleh-hero-title">Invest in yourself! Bundles,<br>frontals & closures.</h1>
+            <p class="enoleh-hero-subtitle">With over 5 years of research, we preset the finest quality hair.</p>
+            <a href="#featured-products" class="btn btn-outline enoleh-hero-btn">SHOP NOW</a>
         </div>
     </section>
 
-    <!-- Asymmetric Lookbook Categories Grid -->
-    <section class="lookbook-section" id="collections">
-        <div class="container">
-            <div class="lookbook-header">
-                <span class="section-subtitle-alt">THE DOSSIER</span>
-                <h2 class="section-title">The Raw Collections</h2>
-            </div>
-            <div class="lookbook-grid">
-                <!-- Large Featured Card Left -->
-                <div class="lookbook-card lookbook-card-featured">
-                    <div class="lookbook-img-wrapper">
-                        <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Raw Lace Wigs" class="lookbook-img">
-                        <div class="lookbook-card-overlay"></div>
-                    </div>
-                    <div class="lookbook-card-content">
-                        <span class="card-tag">01 / UNFILTERED LUXURY</span>
-                        <h3>Raw HD Lace Wigs</h3>
-                        <p>Pre-plucked, single-donor raw units that melt seamlessly for a flawless hairline.</p>
-                        <a href="#featured-products" class="lookbook-btn">Discover Drop</a>
-                    </div>
-                </div>
-                <!-- Right column (split horizontal cards) -->
-                <div class="lookbook-right-col">
-                    <div class="lookbook-card lookbook-card-split">
-                        <div class="lookbook-img-wrapper">
-                            <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Raw Bundles" class="lookbook-img">
-                            <div class="lookbook-card-overlay"></div>
-                        </div>
-                        <div class="lookbook-card-content-split">
-                            <div>
-                                <span class="card-tag">02 / NATURAL BOUNCE</span>
-                                <h3>Burmese Raw Bundles</h3>
-                            </div>
-                            <a href="#featured-products" class="lookbook-link"><i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                    <div class="lookbook-card lookbook-card-split">
-                        <div class="lookbook-img-wrapper">
-                            <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="Closures" class="lookbook-img">
-                            <div class="lookbook-card-overlay"></div>
-                        </div>
-                        <div class="lookbook-card-content-split">
-                            <div>
-                                <span class="card-tag">03 / MELT FINISH</span>
-                                <h3>HD Closures & Frontals</h3>
-                            </div>
-                            <a href="#featured-products" class="lookbook-link"><i class="fa-solid fa-arrow-right-long"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Texture & Length Visualizer -->
-    <section class="texture-visualizer-section" id="visualizer">
-        <div class="container visualizer-grid">
-            <div class="visualizer-image-side">
-                <div class="visualizer-frame">
-                    <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Burmese Straight" class="visualizer-img">
-                    <div class="visualizer-frame-border"></div>
-                </div>
-            </div>
-            <div class="visualizer-text-side">
-                <span class="editorial-label">INTERACTIVE RITUAL</span>
-                <h2 class="visualizer-title-section">Select Your Texture</h2>
-                
-                <!-- Texture selection tabs -->
-                <div class="texture-tabs-container">
-                    <button class="texture-tab active" onclick="selectTexture(this, '{{ 'straight_bundles.jpg' | asset_url }}', 'Burmese Raw Straight', 'Sourced from single donor temple hair. Bone straight, natural luster, bleaches to 613 flawlessly while maintaining deep cuticle strength and hydration.')">Burmese Straight</button>
-                    <button class="texture-tab" onclick="selectTexture(this, '{{ 'body_wave_wig.jpg' | asset_url }}', 'Eurasian Body Wave', 'Features a soft, luxurious S-pattern wave. Naturally voluminous, bouncy, and versatile. Easily holds premium curls or presses flat with ease.')">Eurasian Body Wave</button>
-                    <button class="texture-tab" onclick="selectTexture(this, '{{ 'curly_wig.jpg' | asset_url }}', 'Cambodian Deep Curly', 'Exotic deep wave patterns with organic raw texture. Retains intense moisture, stays frizz-free, and offers maximum, head-turning crown volume.')">Cambodian Curly</button>
-                </div>
-
-                <div class="visualizer-details">
-                    <h3 class="visualizer-title">Burmese Raw Straight</h3>
-                    <p class="visualizer-desc">Sourced from single donor temple hair. Bone straight, natural luster, bleaches to 613 flawlessly while maintaining deep cuticle strength and hydration.</p>
-                    <ul class="visualizer-specs-list">
-                        <li><span class="spec-bullet">&bull;</span> <strong>100% Unprocessed:</strong> Chemical & steam free</li>
-                        <li><span class="spec-bullet">&bull;</span> <strong>Density Specs:</strong> 180% Double-Drawn thickness</li>
-                        <li><span class="spec-bullet">&bull;</span> <strong>Lifespan:</strong> Guaranteed 3-5 years with care</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bestselling Products Catalog -->
-    <section class="products-section" id="featured-products">
-        <div class="container">
-            <div class="section-header-flex">
-                <div>
-                    <span class="section-subtitle-alt">THE REGISTRY</span>
-                    <h2 class="section-title">The Signature Boutique</h2>
-                </div>
-                <div class="product-filters">
-                    <span class="filter-tab active" data-filter="all">All Items</span>
-                    <span class="filter-tab" data-filter="wigs">Wigs</span>
-                    <span class="filter-tab" data-filter="bundles">Bundles</span>
-                </div>
-            </div>
-            <div class="products-grid">
-                <!-- Dynamic JavaScript injections -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Flagship Spotlight Product Section -->
-    <section class="spotlight-section">
-        <div class="container spotlight-grid">
-            <div class="spotlight-text-col">
-                <span class="editorial-label">FLAGSHIP SPOTLIGHT</span>
-                <h2 class="editorial-title">The Signature Bob HD Lace Unit</h2>
-                <p class="editorial-text">Our most requested ready-to-wear glueless unit. Professionally pre-plucked, bleached, and styled for immediate, head-turning glam.</p>
-                <ul class="spotlight-features-list">
-                    <li><i class="fa-solid fa-check"></i> 100% Premium Raw Burmese Human Hair</li>
-                    <li><i class="fa-solid fa-check"></i> Ultra-Thin Swiss HD Lace (Melts invisibly)</li>
-                    <li><i class="fa-solid fa-check"></i> Pre-Plucked Hairline with Delicate Baby Hairs</li>
-                    <li><i class="fa-solid fa-check"></i> Adjustable Custom Elastic Straps (Glueless optional)</li>
-                    <li><i class="fa-solid fa-check"></i> Full 180% Double-Drawn Density</li>
-                </ul>
-                <div class="spotlight-price-row">
-                    <span class="spotlight-price">$450.00</span>
-                    <span class="spotlight-original-price">$580.00</span>
-                </div>
-                <div class="spotlight-buy-actions">
-                    <button class="btn btn-gold btn-spotlight-buy" onclick="addToCartDirectly(1)">Add to Bag</button>
-                    <button class="btn btn-outline btn-spotlight-view" onclick="openQuickView(1)">Quick View Details</button>
-                </div>
-            </div>
-            <div class="spotlight-img-col">
-                <div class="spotlight-img-frame">
-                    <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Signature HD Bob Wig" class="spotlight-img">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Real Customer Testimonials -->
-    <section class="reviews-section">
+    <!-- Most Loved Products Section (Screenshot 2) -->
+    <section class="enoleh-loved-section" id="featured-products">
         <div class="container text-center">
-            <span class="section-subtitle-alt">THE REVIEWS</span>
-            <h2 class="section-title">What Our Investors Say</h2>
-            <div class="reviews-grid-display">
-                <div class="review-card">
-                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-comment">"The HD lace is unbelievable. It literally melted into my skin without glue. People kept asking me where I got my hair done!"</p>
-                    <span class="reviewer-name">Sarah K.</span>
-                    <span class="reviewer-status">&bull; Verified Purchase</span>
+            <h2 class="enoleh-loved-title">Most loved products!</h2>
+            
+            <div class="enoleh-products-grid">
+                <!-- Product 1 -->
+                <div class="enoleh-product-card" onclick="openQuickView(1)">
+                    <div class="enoleh-product-img-wrapper">
+                        <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Bernicia Bob (Frontal Wig)">
+                    </div>
+                    <div class="enoleh-product-info">
+                        <h3 class="enoleh-product-name">muyigreenhair | Bernicia Bob (Frontal Wig)</h3>
+                        <span class="enoleh-product-price">From £891.85</span>
+                    </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-comment">"Muyigreenhair bundles are thick all the way from root to tip. No shedding, bleaches beautifully. I will never buy raw hair anywhere else."</p>
-                    <span class="reviewer-name">Damilola O.</span>
-                    <span class="reviewer-status">&bull; Verified Purchase</span>
+                <!-- Product 2 -->
+                <div class="enoleh-product-card" onclick="openQuickView(1)">
+                    <div class="enoleh-product-img-wrapper">
+                        <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="The Drama (Ocean Wave Frontal Wig)">
+                    </div>
+                    <div class="enoleh-product-info">
+                        <h3 class="enoleh-product-name">muyigreenhair | The Drama (Ocean Wave 13x6 HD Frontal Wig)</h3>
+                        <span class="enoleh-product-price">From £1,785.85</span>
+                    </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="review-comment">"Amazing packaging and very fast delivery. The wig arrived boxed beautifully. Pre-styled out of the box. Absolutely worth every single cent!"</p>
-                    <span class="reviewer-name">Amara E.</span>
-                    <span class="reviewer-status">&bull; Verified Purchase</span>
+                <!-- Product 3 -->
+                <div class="enoleh-product-card" onclick="openQuickView(1)">
+                    <div class="enoleh-product-img-wrapper">
+                        <div class="img-badge-text">muyigreenhair</div>
+                        <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="The Drama Closure Wig">
+                    </div>
+                    <div class="enoleh-product-info">
+                        <h3 class="enoleh-product-name">muyigreenhair | "The Drama" (26" Ocean Wave HD Closure Wig)</h3>
+                        <span class="enoleh-product-price">From £1,703.00</span>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="enoleh-product-card" onclick="openQuickView(1)">
+                    <div class="enoleh-product-img-wrapper">
+                        <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Bernicia Bob (Closure Wig)">
+                    </div>
+                    <div class="enoleh-product-info">
+                        <h3 class="enoleh-product-name">muyigreenhair | Bernicia Bob (Closure Wig)</h3>
+                        <span class="enoleh-product-price">From £828.85</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Join the Experience -->
-    <section class="newsletter-section">
+    <!-- Texture Bundles Slider Carousel (Screenshot 3) -->
+    <section class="enoleh-bundles-section">
         <div class="container text-center">
-            <h2>Join the Muyigreenhair Experience</h2>
-            <p>Subscribe to receive exclusive drops, private sample access, and raw hair care diaries directly to your inbox.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the Muyigreenhair Collective!'); this.reset();">
-                <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-                <button type="submit" class="btn btn-gold">Join Now</button>
+            <div class="enoleh-bundles-carousel-wrapper">
+                <div class="enoleh-bundles-grid">
+                    <!-- Bundle Item 1 -->
+                    <div class="enoleh-bundle-card">
+                        <div class="enoleh-bundle-img-wrapper">
+                            <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Classic Wave">
+                        </div>
+                        <div class="enoleh-bundle-info">
+                            <h3 class="enoleh-bundle-name">muyigreenhair | Classic Wave</h3>
+                            <span class="enoleh-bundle-price">From £164.85</span>
+                        </div>
+                    </div>
+                    <!-- Bundle Item 2 -->
+                    <div class="enoleh-bundle-card">
+                        <div class="enoleh-bundle-img-wrapper">
+                            <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Ocean Wave">
+                        </div>
+                        <div class="enoleh-bundle-info">
+                            <h3 class="enoleh-bundle-name">muyigreenhair | Ocean Wave</h3>
+                            <span class="enoleh-bundle-price">From £164.85</span>
+                        </div>
+                    </div>
+                    <!-- Bundle Item 3 -->
+                    <div class="enoleh-bundle-card">
+                        <div class="enoleh-bundle-img-wrapper">
+                            <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Satin Strand">
+                        </div>
+                        <div class="enoleh-bundle-info">
+                            <h3 class="enoleh-bundle-name">muyigreenhair | Satin Strand</h3>
+                            <span class="enoleh-bundle-price">From £179.85</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel dots indicators -->
+                <div class="enoleh-carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seamless Lifestyle Gallery Row (Screenshot 4) -->
+    <section class="enoleh-gallery-section">
+        <div class="enoleh-gallery-grid">
+            <div class="enoleh-gallery-item">
+                <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Lifestyle Model 1">
+            </div>
+            <div class="enoleh-gallery-item">
+                <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Lifestyle Model 2">
+            </div>
+            <div class="enoleh-gallery-item">
+                <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Lifestyle Model 3">
+            </div>
+            <div class="enoleh-gallery-item">
+                <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="Lifestyle Model 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter (Screenshot 5) -->
+    <section class="enoleh-newsletter-section">
+        <div class="container text-center">
+            <h2 class="enoleh-newsletter-title">Join the muyigreenhair experience.</h2>
+            <p class="enoleh-newsletter-desc">Indulge your inbox with expert hair tips, care rituals & exclusive muyigreenhair updates.</p>
+            <form class="enoleh-newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the muyigreenhair experience!'); this.reset();">
+                <input type="email" placeholder="Your email" class="enoleh-newsletter-input" required>
+                <button type="button" class="enoleh-newsletter-dots-btn">...</button>
+                <button type="submit" class="enoleh-newsletter-submit-btn">SUBSCRIBE</button>
             </form>
         </div>
     </section>
