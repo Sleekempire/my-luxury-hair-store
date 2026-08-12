@@ -1,16 +1,16 @@
-/* State-of-the-Art Plum & Rose Gold Luxury Styling System */
+/* State-of-the-Art Obsidian Dark Mode Luxury Styling System */
 
 :root {
-    --color-primary: #FAF6F0;          /* Warm Champagne Ivory */
-    --color-secondary: #2E1A22;        /* Deep Royal Plum */
-    --color-bg-dark: #F4EBE8;          /* Dusty Rose Sage / Soft Mauve Sand */
-    --color-bg-card: #ffffff;          /* Pure White for Card Panels */
-    --color-accent: #D5A79E;           /* Rose Gold Accent */
-    --color-accent-hover: #B98379;     /* Rich Rose Gold Bronze on Hover */
-    --color-text-light: #2A1D22;       /* Deep Espresso Plum for Primary Text */
-    --color-text-muted: #7B6B70;       /* Soft Mauve Gray */
-    --color-border-thin: rgba(46, 26, 34, 0.12); /* Translucent plum border */
-    --color-border-medium: rgba(46, 26, 34, 0.25);
+    --color-primary: #050505;          /* Obsidian Jet Black */
+    --color-secondary: #ffffff;        /* Pure White */
+    --color-bg-dark: #0a0a0a;          /* Deep Velvet Black */
+    --color-bg-card: #121212;          /* Matte Charcoal for Cards/Drawers */
+    --color-accent: #c5a880;           /* Luxury Muted Champagne Gold */
+    --color-accent-hover: #e5cda8;     /* Brighter Gold on hover */
+    --color-text-light: #f5f5f7;       /* Soft White/Silver for Primary Text */
+    --color-text-muted: #8e8e93;       /* Apple Muted Gray for Secondary Text */
+    --color-border-thin: rgba(255, 255, 255, 0.05); /* Ultra-fine line */
+    --color-border-medium: rgba(255, 255, 255, 0.1);
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -113,18 +113,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-gold {
-    background: linear-gradient(135deg, #f5dcd6 0%, #D5A79E 50%, #b27c72 100%);
+    background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #907148 100%);
     color: var(--color-primary);
-    border: 1px solid rgba(213, 167, 158, 0.8);
+    border: 1px solid rgba(197, 168, 128, 0.8);
     font-weight: 600;
-    box-shadow: 0 4px 20px rgba(213, 167, 158, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: var(--transition-standard);
 }
 
 .btn-gold:hover {
     color: var(--color-primary) !important;
-    border-color: #f5dcd6;
-    box-shadow: 0 8px 30px rgba(213, 167, 158, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: #ebd1a9;
+    box-shadow: 0 8px 30px rgba(197, 168, 128, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -155,11 +155,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-header.header-scrolled {
-    background-color: rgba(250, 248, 245, 0.92);
+    background-color: rgba(5, 5, 5, 0.85);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid rgba(180, 151, 112, 0.15);
-    box-shadow: 0 10px 35px rgba(180, 151, 112, 0.05);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 #main-header.header-scrolled .logo-text,
@@ -351,12 +351,10 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     width: 480px;
     max-width: 100%;
-    background-color: rgba(250, 248, 245, 0.96);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background-color: var(--color-bg-card);
     border-left: 1px solid var(--color-border-thin);
     z-index: 2000;
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
@@ -1258,7 +1256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-hover-btn {
     flex: 1;
-    background: linear-gradient(135deg, #f5dcd6 0%, #D5A79E 50%, #b27c72 100%);
+    background: linear-gradient(135deg, #f3e5ab 0%, #c5a880 50%, #907148 100%);
     color: var(--color-primary);
     border: none;
     padding: 18px 0;
@@ -1557,8 +1555,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Elite Footer Layout */
 footer {
-    background-color: var(--color-secondary); /* Deep Velvet Emerald Green */
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     padding: 100px 0 40px 0;
     border-top: 1px solid var(--color-border-thin);
 }
@@ -1590,12 +1588,11 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.3em;
     margin-bottom: 25px;
-    color: #ffffff;
 }
 
 .brand-mission {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.5);
     line-height: 1.8;
     margin-bottom: 30px;
     max-width: 380px;
@@ -1607,7 +1604,7 @@ footer {
 }
 
 .social-links a {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.2rem;
 }
 
@@ -1630,18 +1627,18 @@ footer {
 }
 
 .footer-col ul li a {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.85rem;
     display: inline-block;
 }
 
 .footer-col ul li a:hover {
-    color: var(--color-accent);
+    color: var(--color-secondary);
     transform: translateX(5px);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 40px;
 }
 
@@ -1650,7 +1647,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -1668,7 +1665,7 @@ footer {
 }
 
 .payment-methods i {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 /* Mobile Optimization & Responsive Reductions */
