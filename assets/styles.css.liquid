@@ -4489,3 +4489,240 @@ body.dark-mode .header-dropdown-menu a {
 /* ==========================================================
    END PASTEL LUXURY REDESIGN
    ========================================================== */
+
+/* ==========================================================
+   MOBILE-FIRST RESPONSIVE OVERRIDES (max-width: 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+
+    /* --- Header fixes --- */
+    .header-container {
+        height: 64px !important;
+        padding: 0 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+    }
+
+    /* Hide currency picker on mobile – saves space */
+    .currency-picker {
+        display: none !important;
+    }
+
+    /* Logo centred on mobile */
+    .logo-container {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        flex: none !important;
+    }
+    .logo-text {
+        font-size: 1.15rem !important;
+        letter-spacing: 0.06em !important;
+    }
+
+    /* Mobile nav toggle on far left */
+    .mobile-nav-toggle {
+        order: 0 !important;
+        flex: none !important;
+        font-size: 1.1rem !important;
+        padding: 8px !important;
+        color: inherit !important;
+    }
+
+    /* Utilities (search, cart, dark-mode) on far right */
+    .header-utilities {
+        order: 2 !important;
+        gap: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    .utility-btn {
+        font-size: 1rem !important;
+        padding: 4px !important;
+    }
+
+    /* Dark mode toggle: compact on mobile */
+    #dark-mode-toggle {
+        font-size: 0.85rem !important;
+        padding: 4px 8px !important;
+        border-radius: 50px !important;
+        background: rgba(255,255,255,0.3) !important;
+        border: 1px solid rgba(255,179,171,0.4) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        order: 2 !important;
+    }
+
+    /* --- Announcement bar --- */
+    .announcement-bar {
+        font-size: 0.65rem !important;
+        padding: 8px 12px !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+    }
+
+    /* --- Hero section --- */
+    .hero-section {
+        min-height: 70vh !important;
+    }
+    .hero-content {
+        padding: 20px 20px !important;
+        max-width: 100% !important;
+    }
+    .hero-headline {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    .hero-subtext {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+    .hero-btn {
+        font-size: 0.8rem !important;
+        padding: 12px 28px !important;
+        border-radius: 50px !important;
+    }
+
+    /* --- Section headings --- */
+    .enoleh-loved-title,
+    .enoleh-bundles-title,
+    h2, .section-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 16px !important;
+    }
+
+    /* --- Product grid: single column on mobile --- */
+    .enoleh-products-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+        padding: 0 12px !important;
+    }
+
+    /* --- Product card: compact on mobile --- */
+    .enoleh-product-card {
+        border-radius: 14px !important;
+        padding: 4px !important;
+    }
+    .enoleh-product-img-wrapper {
+        height: 180px !important;
+    }
+    .enoleh-product-name {
+        font-size: 0.75rem !important;
+    }
+    .enoleh-product-price {
+        font-size: 0.7rem !important;
+    }
+
+    /* --- Bundle carousel: single card per view --- */
+    .enoleh-bundle-card {
+        min-width: calc(80vw) !important;
+        max-width: calc(80vw) !important;
+    }
+    .enoleh-bundles-track {
+        padding: 0 12px !important;
+        gap: 12px !important;
+    }
+    .enoleh-bundle-img {
+        height: 200px !important;
+    }
+    .enoleh-bundle-info {
+        padding: 12px !important;
+    }
+    .enoleh-bundle-name {
+        font-size: 0.82rem !important;
+    }
+    .enoleh-bundle-price {
+        font-size: 0.75rem !important;
+    }
+
+    /* --- Lookbook marquee: smaller items on mobile --- */
+    .lookbook-item {
+        width: 160px !important;
+        height: 200px !important;
+    }
+
+    /* --- Newsletter: full width, less padding --- */
+    .enoleh-newsletter-section {
+        margin: 0 12px 20px 12px !important;
+        padding: 32px 16px !important;
+        border-radius: 16px !important;
+    }
+    .enoleh-newsletter-title {
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
+    }
+    .enoleh-newsletter-desc {
+        font-size: 0.8rem !important;
+        margin-bottom: 16px !important;
+    }
+    .enoleh-newsletter-form {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: stretch !important;
+    }
+    .enoleh-newsletter-input {
+        width: 100% !important;
+        padding: 12px 16px !important;
+        border-radius: 50px !important;
+    }
+    .enoleh-newsletter-submit-btn {
+        width: 100% !important;
+        padding: 12px 24px !important;
+        border-radius: 50px !important;
+        font-size: 0.82rem !important;
+    }
+    .enoleh-newsletter-dots-btn {
+        display: none !important;
+    }
+
+    /* --- Footer: stack columns vertically --- */
+    footer#footer {
+        padding: 32px 16px 20px 16px !important;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        margin-bottom: 20px !important;
+    }
+    .footer-col h4 {
+        font-size: 0.8rem !important;
+        margin-bottom: 10px !important;
+    }
+    .footer-col li {
+        margin-bottom: 6px !important;
+    }
+    .footer-col a {
+        font-size: 0.78rem !important;
+    }
+    .footer-bottom {
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+        font-size: 0.72rem !important;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+    .logo-text {
+        font-size: 1rem !important;
+    }
+    .header-container {
+        height: 58px !important;
+        padding: 0 12px !important;
+    }
+    .enoleh-products-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        padding: 0 8px !important;
+    }
+    .hero-headline {
+        font-size: 1.65rem !important;
+    }
+}
+
+/* ==========================================================
+   END MOBILE RESPONSIVE OVERRIDES
+   ========================================================== */
