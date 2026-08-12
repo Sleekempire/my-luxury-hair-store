@@ -124,7 +124,10 @@ function setupEventListeners() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     filterTabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
-            filterTabs.forEach(t => t.classList.remove('active'));
+            const parentSection = e.target.closest('.products-section');
+            if (parentSection) {
+                parentSection.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            }
             e.target.classList.add('active');
             const category = e.target.dataset.filter;
             if (category === 'all') {
@@ -157,49 +160,80 @@ function setupEventListeners() {
             renderProducts(results);
             window.location.hash = "#featured-products";
         });
-    });
+    // Design Switcher Panel Event Listeners
+    const switcherPanel = document.getElementById('design-switcher-panel');
+    if (switcherPanel) {
+        const switcherButtons = switcherPanel.querySelectorAll('.switcher-btn');
+        switcherButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const designId = e.target.dataset.design;
+                
+                // Toggle active switcher button
+                switcherButtons.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Toggle active layout wrapper
+                document.querySelectorAll('.design-layout-wrapper').forEach(wrapper => {
+                    wrapper.classList.remove('active');
+                });
+                const targetLayout = document.getElementById(`design-layout-${designId}`);
+                if (targetLayout) {
+                    targetLayout.classList.add('active');
+                }
+
+                // Add body class for global styling changes
+                document.body.className = `design-mode-${designId}`;
+
+                // Smooth scroll to top when changing design
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    }
 }
 
 // Render Products Grid
 function renderProducts(productsList) {
-    productsGrid.innerHTML = '';
-    
-    if (productsList.length === 0) {
-        productsGrid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted);">No products found matching selection.</p>';
-        return;
-    }
+    const grids = document.querySelectorAll('.products-grid');
+    grids.forEach(grid => {
+        grid.innerHTML = '';
+        
+        if (productsList.length === 0) {
+            grid.innerHTML = '<p class="text-center" style="grid-column: 1/-1; color: var(--color-text-muted);">No products found matching selection.</p>';
+            return;
+        }
 
-    productsList.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="product-badge">Bestseller</div>
-            <div class="product-img-wrapper">
-                <img src="${product.image}" alt="${product.title}" class="product-primary-img">
-                <img src="${product.hoverImage}" alt="${product.title}" class="product-secondary-img">
-                <div class="product-hover-actions">
-                    <button class="product-hover-btn quick-buy" data-id="${product.id}">Quick Buy</button>
-                    <button class="product-hover-btn quick-view" data-id="${product.id}">Quick View</button>
+        productsList.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-badge">Bestseller</div>
+                <div class="product-img-wrapper">
+                    <img src="${product.image}" alt="${product.title}" class="product-primary-img">
+                    <img src="${product.hoverImage}" alt="${product.title}" class="product-secondary-img">
+                    <div class="product-hover-actions">
+                        <button class="product-hover-btn quick-buy" data-id="${product.id}">Quick Buy</button>
+                        <button class="product-hover-btn quick-view" data-id="${product.id}">Quick View</button>
+                    </div>
                 </div>
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">${product.title}</h3>
-                <span class="product-price">$${product.price.toFixed(2)}</span>
-            </div>
-        `;
+                <div class="product-info">
+                    <h3 class="product-title">${product.title}</h3>
+                    <span class="product-price">$${product.price.toFixed(2)}</span>
+                </div>
+            `;
 
-        // Attach event listeners to hover action buttons
-        card.querySelector('.quick-buy').addEventListener('click', (e) => {
-            e.stopPropagation();
-            addToCartDirectly(product.id);
+            // Attach event listeners to hover action buttons
+            card.querySelector('.quick-buy').addEventListener('click', (e) => {
+                e.stopPropagation();
+                addToCartDirectly(product.id);
+            });
+
+            card.querySelector('.quick-view').addEventListener('click', (e) => {
+                e.stopPropagation();
+                openQuickView(product.id);
+            });
+
+            grid.appendChild(card);
         });
-
-        card.querySelector('.quick-view').addEventListener('click', (e) => {
-            e.stopPropagation();
-            openQuickView(product.id);
-        });
-
-        productsGrid.appendChild(card);
     });
 }
 
@@ -389,3 +423,25 @@ function closeCart() {
     cartDrawerOverlay.classList.remove('open');
     cartDrawer.classList.remove('open');
 }
+
+// Royal Accordion Handler (Design 5)
+window.toggleAccordion = function(element) {
+    const item = element.closest('.accordion-item');
+    const icon = element.querySelector('i');
+    
+    if (item.classList.contains('active')) {
+        item.classList.remove('active');
+        if (icon) icon.className = 'fa-solid fa-plus';
+    } else {
+        // Close other items
+        const accordion = element.closest('.royal-accordion');
+        accordion.querySelectorAll('.accordion-item').forEach(i => {
+            i.classList.remove('active');
+            const itemIcon = i.querySelector('.accordion-header i');
+            if (itemIcon) itemIcon.className = 'fa-solid fa-plus';
+        });
+        
+        item.classList.add('active');
+        if (icon) icon.className = 'fa-solid fa-minus';
+    }
+};

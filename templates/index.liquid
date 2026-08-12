@@ -1,176 +1,586 @@
-<!-- Section 1: Hero Slideshow Banner -->
-<section class="hero-section">
-    <div class="hero-bg-container">
-        <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Muyigreenhair luxury model" class="hero-bg-image">
-        <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-        <span class="hero-subtitle">MUYIGREENHAIR</span>
-        <h1 class="hero-title">Raw Hair & HD Wigs</h1>
-        <div class="hero-actions">
-            <a href="#featured-products" class="btn btn-gold">Shop Wigs</a>
-            <a href="#collections" class="btn btn-outline">Explore Bundles</a>
+<!-- Layout 1: The High-Fashion Editorial -->
+<div class="design-layout-wrapper active" id="design-layout-1">
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-bg-container">
+            <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Muyigreenhair luxury model" class="hero-bg-image">
+            <div class="hero-overlay"></div>
         </div>
-    </div>
-    <div class="scroll-indicator">
-        <span class="scroll-text">Explore Story</span>
-        <div class="scroll-line"></div>
-    </div>
-</section>
-
-<!-- Section 3: Collections Grid -->
-<section class="collections-section" id="collections">
-    <div class="container">
-        <span class="section-subtitle-alt">THE COLLECTIONS</span>
-        <h2 class="section-title">Shop by Category</h2>
-        <div class="collections-grid">
-            <!-- Wigs -->
-            <div class="collection-card">
-                <div class="collection-img-wrapper">
-                    <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Luxury Wigs" class="collection-img">
-                </div>
-                <div class="collection-content">
-                    <h3>Raw Lace Wigs</h3>
-                    <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-            </div>
-            <!-- Bundles -->
-            <div class="collection-card">
-                <div class="collection-img-wrapper">
-                    <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Raw Bundles" class="collection-img">
-                </div>
-                <div class="collection-content">
-                    <h3>Virgin Hair Bundles</h3>
-                    <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
-            </div>
-            <!-- Closures -->
-            <div class="collection-card">
-                <div class="collection-img-wrapper">
-                    <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="HD Closures & Frontals" class="collection-img">
-                </div>
-                <div class="collection-content">
-                    <h3>Closures & Frontals</h3>
-                    <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
-                </div>
+        <div class="hero-content">
+            <span class="hero-subtitle">MUYIGREENHAIR</span>
+            <h1 class="hero-title">Raw Hair & HD Wigs</h1>
+            <div class="hero-actions">
+                <a href="#featured-products" class="btn btn-gold">Shop Wigs</a>
+                <a href="#collections" class="btn btn-outline">Explore Bundles</a>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Section 4: Bestselling Products Catalog -->
-<section class="products-section" id="featured-products">
-    <div class="container">
-        <div class="section-header-flex">
-            <div>
-                <span class="section-subtitle-alt">THE STANDARD</span>
-                <h2 class="section-title">Signature Hair Pieces</h2>
-            </div>
-            <div class="product-filters">
-                <span class="filter-tab active" data-filter="all">All</span>
-                <span class="filter-tab" data-filter="wigs">Wigs</span>
-                <span class="filter-tab" data-filter="bundles">Bundles</span>
-            </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Explore Story</span>
+            <div class="scroll-line"></div>
         </div>
+    </section>
 
-        <div class="products-grid" id="products-grid">
-            <!-- Dynamic JavaScript injections by app.js -->
-        </div>
-    </div>
-</section>
-
-<!-- Section 5: Flagship Spotlight Product Section -->
-<section class="spotlight-section">
-    <div class="container spotlight-grid">
-        <div class="spotlight-text-col">
-            <span class="editorial-label">FLAGSHIP SPOTLIGHT</span>
-            <h2 class="editorial-title">The Signature Bob HD Lace Unit</h2>
-            <p class="editorial-text">Our most requested ready-to-wear glueless unit. Professionally pre-plucked, bleached, and styled for immediate, head-turning glam.</p>
-            
-            <ul class="spotlight-features-list">
-                <li><i class="fa-solid fa-check"></i> 100% Premium Raw Burmese Human Hair</li>
-                <li><i class="fa-solid fa-check"></i> Ultra-Thin Swiss HD Lace (Melts invisibly)</li>
-                <li><i class="fa-solid fa-check"></i> Pre-Plucked Hairline with Delicate Baby Hairs</li>
-                <li><i class="fa-solid fa-check"></i> Adjustable Custom Elastic Straps (Glueless optional)</li>
-                <li><i class="fa-solid fa-check"></i> Full 180% Double-Drawn Density</li>
-            </ul>
-
-            <div class="spotlight-price-row">
-                <span class="spotlight-price">$450.00</span>
-                <span class="spotlight-original-price">$580.00</span>
-            </div>
-
-            <div class="spotlight-buy-actions">
-                <button class="btn btn-gold btn-spotlight-buy" onclick="addToCartDirectly(1)">Add to Bag</button>
-                <button class="btn btn-outline btn-spotlight-view" onclick="openQuickView(1)">Quick View Details</button>
-            </div>
-        </div>
-        <div class="spotlight-img-col">
-            <div class="spotlight-img-frame">
-                <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Signature HD Bob Wig" class="spotlight-img">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section 6: Real Customer Testimonials Carousel -->
-<section class="reviews-section">
-    <div class="container text-center">
-        <span class="section-subtitle-alt">THE REVIEWS</span>
-        <h2 class="section-title">What Our Investors Say</h2>
-        
-        <div class="reviews-carousel">
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="review-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+    <!-- Collections Grid -->
+    <section class="collections-section" id="collections">
+        <div class="container">
+            <span class="section-subtitle-alt">THE COLLECTIONS</span>
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-img-wrapper">
+                        <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Luxury Wigs" class="collection-img">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Raw Lace Wigs</h3>
+                        <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
                 </div>
-                <p class="review-comment">"The HD lace is unbelievable. It literally melted into my skin without glue. People kept asking me where I got my hair done!"</p>
-                <span class="reviewer-name">Sarah K.</span>
-                <span class="reviewer-status">&bull; Verified Purchase</span>
-            </div>
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="review-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                <div class="collection-card">
+                    <div class="collection-img-wrapper">
+                        <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Raw Bundles" class="collection-img">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Virgin Hair Bundles</h3>
+                        <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
                 </div>
-                <p class="review-comment">"Muyigreenhair bundles are thick all the way from root to tip. No shedding, bleaches beautifully. I will never buy raw hair anywhere else."</p>
-                <span class="reviewer-name">Damilola O.</span>
-                <span class="reviewer-status">&bull; Verified Purchase</span>
-            </div>
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="review-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                <div class="collection-card">
+                    <div class="collection-img-wrapper">
+                        <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="HD Closures & Frontals" class="collection-img">
+                    </div>
+                    <div class="collection-content">
+                        <h3>Closures & Frontals</h3>
+                        <a href="#featured-products" class="collection-link">Discover <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
                 </div>
-                <p class="review-comment">"Amazing packaging and very fast delivery. The wig arrived boxed beautifully. Pre-styled out of the box. Absolutely worth every single cent!"</p>
-                <span class="reviewer-name">Amara E.</span>
-                <span class="reviewer-status">&bull; Verified Purchase</span>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Section 7: Join the Experience (Newsletter) -->
-<section class="newsletter-section">
-    <div class="container text-center">
-        <h2>Join the Muyigreenhair Experience</h2>
-        <p>Subscribe to receive exclusive drops, private sample access, and raw hair care diaries directly to your inbox.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the Muyigreenhair Collective!'); this.reset();">
-            <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-            <button type="submit" class="btn btn-gold">Join Now</button>
-        </form>
+    <!-- Bestselling Products Catalog -->
+    <section class="products-section" id="featured-products">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <span class="section-subtitle-alt">THE STANDARD</span>
+                    <h2 class="section-title">Signature Hair Pieces</h2>
+                </div>
+                <div class="product-filters">
+                    <span class="filter-tab active" data-filter="all">All</span>
+                    <span class="filter-tab" data-filter="wigs">Wigs</span>
+                    <span class="filter-tab" data-filter="bundles">Bundles</span>
+                </div>
+            </div>
+            <div class="products-grid">
+                <!-- Dynamic JavaScript injections -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship Spotlight Product Section -->
+    <section class="spotlight-section">
+        <div class="container spotlight-grid">
+            <div class="spotlight-text-col">
+                <span class="editorial-label">FLAGSHIP SPOTLIGHT</span>
+                <h2 class="editorial-title">The Signature Bob HD Lace Unit</h2>
+                <p class="editorial-text">Our most requested ready-to-wear glueless unit. Professionally pre-plucked, bleached, and styled for immediate, head-turning glam.</p>
+                <ul class="spotlight-features-list">
+                    <li><i class="fa-solid fa-check"></i> 100% Premium Raw Burmese Human Hair</li>
+                    <li><i class="fa-solid fa-check"></i> Ultra-Thin Swiss HD Lace (Melts invisibly)</li>
+                    <li><i class="fa-solid fa-check"></i> Pre-Plucked Hairline with Delicate Baby Hairs</li>
+                    <li><i class="fa-solid fa-check"></i> Adjustable Custom Elastic Straps (Glueless optional)</li>
+                    <li><i class="fa-solid fa-check"></i> Full 180% Double-Drawn Density</li>
+                </ul>
+                <div class="spotlight-price-row">
+                    <span class="spotlight-price">$450.00</span>
+                    <span class="spotlight-original-price">$580.00</span>
+                </div>
+                <div class="spotlight-buy-actions">
+                    <button class="btn btn-gold btn-spotlight-buy" onclick="addToCartDirectly(1)">Add to Bag</button>
+                    <button class="btn btn-outline btn-spotlight-view" onclick="openQuickView(1)">Quick View Details</button>
+                </div>
+            </div>
+            <div class="spotlight-img-col">
+                <div class="spotlight-img-frame">
+                    <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Signature HD Bob Wig" class="spotlight-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Customer Testimonials -->
+    <section class="reviews-section">
+        <div class="container text-center">
+            <span class="section-subtitle-alt">THE REVIEWS</span>
+            <h2 class="section-title">What Our Investors Say</h2>
+            <div class="reviews-grid-display">
+                <div class="review-card">
+                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-comment">"The HD lace is unbelievable. It literally melted into my skin without glue. People kept asking me where I got my hair done!"</p>
+                    <span class="reviewer-name">Sarah K.</span>
+                    <span class="reviewer-status">&bull; Verified Purchase</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-comment">"Muyigreenhair bundles are thick all the way from root to tip. No shedding, bleaches beautifully. I will never buy raw hair anywhere else."</p>
+                    <span class="reviewer-name">Damilola O.</span>
+                    <span class="reviewer-status">&bull; Verified Purchase</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-comment">"Amazing packaging and very fast delivery. The wig arrived boxed beautifully. Pre-styled out of the box. Absolutely worth every single cent!"</p>
+                    <span class="reviewer-name">Amara E.</span>
+                    <span class="reviewer-status">&bull; Verified Purchase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Experience -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Join the Muyigreenhair Experience</h2>
+            <p>Subscribe to receive exclusive drops, private sample access, and raw hair care diaries directly to your inbox.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the Muyigreenhair Collective!'); this.reset();">
+                <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
+                <button type="submit" class="btn btn-gold">Join Now</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- Layout 2: The Minimalist Modern Grid (Asymmetrical Layout) -->
+<div class="design-layout-wrapper" id="design-layout-2">
+    <!-- Split Hero -->
+    <section class="split-hero-section">
+        <div class="split-hero-img">
+            <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Minimal model">
+        </div>
+        <div class="split-hero-text">
+            <div class="split-hero-text-content">
+                <span class="minimal-label">COLLECTION 2026</span>
+                <h1 class="minimal-title">Raw Hair Redefined</h1>
+                <p class="minimal-desc">Clean architecture. Uncompromising raw quality. Designed for the modern woman who values effortless elegance.</p>
+                <a href="#featured-products-2" class="btn btn-dark-minimal">Shop the Units</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asymmetrical Collections -->
+    <section class="asym-collections-section">
+        <div class="container">
+            <div class="asym-row-1">
+                <div class="asym-card card-wide">
+                    <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Wigs">
+                    <div class="asym-overlay-content">
+                        <h3>Raw Lace Wigs</h3>
+                        <a href="#featured-products-2">Shop Wigs &rarr;</a>
+                    </div>
+                </div>
+                <div class="asym-card card-narrow">
+                    <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Bundles">
+                    <div class="asym-overlay-content">
+                        <h3>Raw Bundles</h3>
+                        <a href="#featured-products-2">Shop Bundles &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Modern Grid -->
+    <section class="products-section" id="featured-products-2">
+        <div class="container">
+            <div class="minimal-section-header">
+                <h2>Couture Pieces</h2>
+                <div class="product-filters">
+                    <span class="filter-tab active" data-filter="all">All Items</span>
+                    <span class="filter-tab" data-filter="wigs">Wigs</span>
+                    <span class="filter-tab" data-filter="bundles">Bundles</span>
+                </div>
+            </div>
+            <div class="products-grid grid-asym">
+                <!-- Dynamic JavaScript injections -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Values Row -->
+    <section class="values-divider-section">
+        <div class="container values-flex-row">
+            <div class="value-item">
+                <span>01</span>
+                <h4>100% Raw Hair</h4>
+                <p>Pure Burmese, Cambodian, and Indian raw hair selections.</p>
+            </div>
+            <div class="value-item">
+                <span>02</span>
+                <h4>Invisible HD Lace</h4>
+                <p>Ultra-thin Swiss HD lace that melts seamlessly into the scalp.</p>
+            </div>
+            <div class="value-item">
+                <span>03</span>
+                <h4>Complimentary Boxing</h4>
+                <p>Every unit arrives in our signature custom satin-lined storage box.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Quote Banner -->
+    <section class="editorial-quote-banner">
+        <div class="container text-center">
+            <blockquote>"Hair is a statement of pride, power, and individual identity."</blockquote>
+            <cite>&mdash; MUYIGREENHAIR LUXURY</cite>
+        </div>
+    </section>
+
+    <!-- Minimal Undecorated Newsletter -->
+    <section class="minimal-newsletter-section">
+        <div class="container text-center">
+            <h3>Subscribe to the Diary</h3>
+            <form class="minimal-newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to the Muyigreenhair Diary!'); this.reset();">
+                <input type="email" placeholder="Your Email Address" class="minimal-newsletter-input" required>
+                <button type="submit" class="minimal-newsletter-btn">Subscribe &rarr;</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- Layout 3: The Couture Boutique (Glamour & Motion) -->
+<div class="design-layout-wrapper" id="design-layout-3">
+    <!-- Slide Hero with Frame -->
+    <section class="couture-hero">
+        <div class="couture-hero-bg">
+            <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Couture model">
+            <div class="couture-overlay"></div>
+        </div>
+        <div class="couture-hero-frame-container">
+            <div class="couture-hero-frame">
+                <span class="frame-subtitle">ESTABLISHED 2026</span>
+                <h1 class="frame-title">MUYIGREENHAIR</h1>
+                <p class="frame-desc">Exquisite Human Hair & Custom HD Lace Wigs</p>
+                <a href="#featured-products-3" class="btn btn-gold-couture">Enter Boutique</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oval collections categories -->
+    <section class="oval-collections-section">
+        <div class="container text-center">
+            <span class="section-subtitle-alt">THE LINEUP</span>
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="oval-grid">
+                <div class="oval-item">
+                    <div class="oval-img-frame">
+                        <img src="{{ 'body_wave_wig.jpg' | asset_url }}" alt="Oval Wigs">
+                    </div>
+                    <h3>Lace Wigs</h3>
+                    <a href="#featured-products-3">Shop Now</a>
+                </div>
+                <div class="oval-item">
+                    <div class="oval-img-frame">
+                        <img src="{{ 'straight_bundles.jpg' | asset_url }}" alt="Oval Bundles">
+                    </div>
+                    <h3>Virgin Hair</h3>
+                    <a href="#featured-products-3">Shop Now</a>
+                </div>
+                <div class="oval-item">
+                    <div class="oval-img-frame">
+                        <img src="{{ 'curly_wig.jpg' | asset_url }}" alt="Oval Frontals">
+                    </div>
+                    <h3>HD Frontals</h3>
+                    <a href="#featured-products-3">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Scrolling Carousel for Products -->
+    <section class="products-section" id="featured-products-3">
+        <div class="container">
+            <div class="carousel-section-header">
+                <div>
+                    <span class="section-subtitle-alt">COUTURE DIRECT</span>
+                    <h2 class="section-title">Bestselling Units</h2>
+                </div>
+                <div class="product-filters">
+                    <span class="filter-tab active" data-filter="all">All</span>
+                    <span class="filter-tab" data-filter="wigs">Wigs</span>
+                    <span class="filter-tab" data-filter="bundles">Bundles</span>
+                </div>
+            </div>
+            <div class="products-carousel-container">
+                <div class="products-grid carousel-flow-grid">
+                    <!-- Dynamic JavaScript injections -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large Centered Testimonial Slider -->
+    <section class="couture-testimonial-section">
+        <div class="container text-center">
+            <div class="couture-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="couture-quote-text">"Muyigreenhair is hands down the best raw hair brand on the market. The HD lace melts into my skin perfectly. The bundles are full, thick, and hold curls beautifully."</p>
+            <span class="couture-quote-author">AMARA E. &bull; CHICAGO</span>
+            <div class="couture-slider-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Subscribe to the Collective</h2>
+            <p>Join our elite circle to receive product drop alerts and raw hair ritual guidebooks.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!'); this.reset();">
+                <input type="email" placeholder="Your Email Address" class="newsletter-input" required>
+                <button type="submit" class="btn btn-gold">Join Now</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- Layout 4: The Bold Streetwear Luxury (Avant-Garde) -->
+<div class="design-layout-wrapper" id="design-layout-4">
+    <!-- Collage Hero -->
+    <section class="collage-hero-section">
+        <div class="collage-left">
+            <h1 class="collage-title">MUYI<br>GREEN<br>HAIR</h1>
+            <p class="collage-desc">Avant-garde raw hair styling. Raw Burmese bundles, ultra-thin lace closures, and glueless front units designed for luxury endurance.</p>
+            <a href="#featured-products-4" class="btn-bold-street">Shop Catalog</a>
+        </div>
+        <div class="collage-right">
+            <div class="collage-img-box img-main">
+                <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Model Collage">
+            </div>
+            <div class="collage-img-box img-sub">
+                <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Wig Collage">
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcement Sliding Ticker Tape -->
+    <div class="street-ticker-container">
+        <div class="street-ticker">
+            <span>RAW BURMESE HAIR &bull; SWISS HD LACE &bull; GLUELESS CUSTOM FIT &bull; SHIPPED WORLDWIDE &bull; RAW BURMESE HAIR &bull; SWISS HD LACE &bull; GLUELESS CUSTOM FIT &bull; SHIPPED WORLDWIDE &bull;</span>
+        </div>
     </div>
-</section>
+
+    <!-- Bold 4-Column Grid -->
+    <section class="products-section" id="featured-products-4">
+        <div class="container">
+            <div class="street-section-header">
+                <h2>CATALOG</h2>
+                <div class="product-filters">
+                    <span class="filter-tab active" data-filter="all">ALL</span>
+                    <span class="filter-tab" data-filter="wigs">WIGS</span>
+                    <span class="filter-tab" data-filter="bundles">BUNDLES</span>
+                </div>
+            </div>
+            <div class="products-grid grid-street">
+                <!-- Dynamic JavaScript injections -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Spotlight Specs Section -->
+    <section class="tech-spotlight-section">
+        <div class="container tech-grid">
+            <div class="tech-img">
+                <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Technical Wig Detail">
+            </div>
+            <div class="tech-specs-col">
+                <span class="tech-label">SPECIFICATIONS CHART</span>
+                <h2 class="tech-title">THE RAW WIG BUILD</h2>
+                <div class="specs-table">
+                    <div class="specs-row"><span>HAIR TYPE</span><span>100% Burmese Raw Human Hair</span></div>
+                    <div class="specs-row"><span>LACE TYPE</span><span>Swiss HD Invisible Lace Frontal</span></div>
+                    <div class="specs-row"><span>DENSITY</span><span>180% Double-Drawn Volume</span></div>
+                    <div class="specs-row"><span>CAP SIZE</span><span>Standard Medium (Adjustable Straps)</span></div>
+                    <div class="specs-row"><span>HAIRLINE</span><span>Pre-Plucked, Bleached Knots</span></div>
+                </div>
+                <button class="btn-bold-street btn-block" onclick="addToCartDirectly(1)">Secure Spotlight Unit</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials sliding cards -->
+    <section class="street-reviews-section">
+        <div class="container">
+            <h2 class="street-reviews-title">VERIFIED CLIENT FEEDBACK</h2>
+            <div class="street-reviews-grid">
+                <div class="street-review-card">
+                    <span class="quote-mark">“</span>
+                    <p>"Unbelievable melt. The lace literally disappeared into my skin. High-end hair quality at its finest."</p>
+                    <h5>SARAH K. &mdash; LONDON</h5>
+                </div>
+                <div class="street-review-card">
+                    <span class="quote-mark">“</span>
+                    <p>"Bundles are extremely full. Cuticles are perfectly aligned, bleaches easily. The best investment."</p>
+                    <h5>DAMILOLA O. &mdash; LAGOS</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bold Newsletter Block -->
+    <section class="street-newsletter-section">
+        <div class="container text-center">
+            <h2>JOIN THE COLLECTIVE</h2>
+            <form class="street-newsletter-form" onsubmit="event.preventDefault(); alert('Welcome to the Collective!'); this.reset();">
+                <input type="email" placeholder="EMAIL ADDRESS" class="street-newsletter-input" required>
+                <button type="submit" class="street-newsletter-btn">JOIN NOW</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- Layout 5: The Royal Elite (Sophisticated Classic) -->
+<div class="design-layout-wrapper" id="design-layout-5">
+    <!-- Framed Hero Banner -->
+    <section class="royal-hero-section">
+        <div class="royal-hero-frame">
+            <img src="{{ 'hero_model.jpg' | asset_url }}" alt="Royal model" class="royal-hero-img">
+            <div class="royal-hero-overlay"></div>
+            <div class="royal-hero-content">
+                <span class="royal-subtitle">THE ROYAL EDITION</span>
+                <h1 class="royal-title">Muyigreenhair Elite</h1>
+                <p class="royal-desc">Indulge in Burmese raw hair extensions and HD wigs crafted for royalty.</p>
+                <a href="#featured-products-5" class="btn btn-royal">View the Catalog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Category Row List -->
+    <section class="royal-category-list-section">
+        <div class="container">
+            <span class="section-subtitle-alt">THE SELECTIONS</span>
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="royal-category-list">
+                <div class="royal-category-item">
+                    <span class="cat-num">01</span>
+                    <span class="cat-name">Raw Lace Wigs</span>
+                    <a href="#featured-products-5" class="cat-arrow-link"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="royal-category-item">
+                    <span class="cat-num">02</span>
+                    <span class="cat-name">Virgin Hair Bundles</span>
+                    <a href="#featured-products-5" class="cat-arrow-link"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="royal-category-item">
+                    <span class="cat-num">03</span>
+                    <span class="cat-name">HD Closures & Frontals</span>
+                    <a href="#featured-products-5" class="cat-arrow-link"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side-by-side Spotlight with Accordion Dropdown -->
+    <section class="royal-spotlight-section">
+        <div class="container royal-spotlight-grid">
+            <div class="royal-spotlight-text">
+                <span class="editorial-label">SIGNATURE COLLECTIVE</span>
+                <h2 class="editorial-title">The Burmese Bob Unit</h2>
+                <p class="editorial-text">Hand-constructed pre-styled raw unit featuring premium Burmese human hair and Swiss HD lace overlays.</p>
+                
+                <!-- Accordion Details -->
+                <div class="royal-accordion">
+                    <div class="accordion-item active">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Product Specifications</span>
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>13x6 Swiss HD lace, pre-plucked, bleached knots, Burmese raw human hair, 180% density, glueless stretch band.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Shipping & Returns</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Complimentary tracked express shipping globally. Wigs are eligible for return within 14 days in original box with lace uncut and seal intact.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Raw Sourcing Ritual</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Our Burmese human hair is sourced ethically from single-donor raw cuticles. No chemical or steam processing is ever applied.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="royal-price-row">
+                    <span class="price">$450.00</span>
+                    <button class="btn btn-royal" onclick="addToCartDirectly(1)">Add to Bag</button>
+                </div>
+            </div>
+            <div class="royal-spotlight-img">
+                <div class="royal-img-frame">
+                    <img src="{{ 'spotlight_wig.jpg' | asset_url }}" alt="Burmese Bob Wig">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Bestsellers Grid -->
+    <section class="products-section" id="featured-products-5">
+        <div class="container">
+            <div class="royal-section-header">
+                <div>
+                    <span class="section-subtitle-alt">THE COLLECTION</span>
+                    <h2 class="section-title">The Bestselling Registry</h2>
+                </div>
+                <div class="product-filters">
+                    <span class="filter-tab active" data-filter="all">All Items</span>
+                    <span class="filter-tab" data-filter="wigs">Wigs</span>
+                    <span class="filter-tab" data-filter="bundles">Bundles</span>
+                </div>
+            </div>
+            <div class="products-grid grid-royal">
+                <!-- Dynamic JavaScript injections -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews List -->
+    <section class="royal-reviews-section">
+        <div class="container text-center">
+            <span class="section-subtitle-alt">TESTIMONIALS</span>
+            <h2 class="section-title">Client Logbooks</h2>
+            <div class="royal-reviews-list">
+                <div class="royal-review-item">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"The HD lace was completely invisible. Absolute perfection for raw hair lovers."</p>
+                    <span class="author">Sarah K. &bull; London</span>
+                </div>
+                <div class="royal-review-item">
+                    <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Bundles are extremely thick, beautiful bounce. No shedding. Highly recommend."</p>
+                    <span class="author">Damilola O. &bull; Lagos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2>Subscribe to the Registry</h2>
+            <p>Receive alerts on new arrivals and raw hair collection launches.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to the Registry!'); this.reset();">
+                <input type="email" placeholder="Your Email Address" class="newsletter-input" required>
+                <button type="submit" class="btn btn-royal">Join Now</button>
+            </form>
+        </div>
+    </section>
+</div>
