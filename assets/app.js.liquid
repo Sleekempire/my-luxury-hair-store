@@ -537,3 +537,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// =======================================================
+// Dark Mode Toggle
+// =======================================================
+(function() {
+    const btn = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    // Load saved preference
+    if (localStorage.getItem('muyig-dark-mode') === 'on') {
+        body.classList.add('dark-mode');
+        if (btn) btn.textContent = '☀️';
+    }
+    if (btn) {
+        btn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            btn.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('muyig-dark-mode', isDark ? 'on' : 'off');
+        });
+    }
+})();
