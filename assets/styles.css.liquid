@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 64px !important;
     padding: 0 40px !important;
     max-width: 100% !important;
     width: 100% !important;
@@ -3562,10 +3562,11 @@ footer {
 
 .enoleh-hero {
     position: relative;
-    height: 65vh !important;
+    height: 55vh !important;
+    min-height: 420px;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     padding-left: 60px;
     padding-right: 60px;
     overflow: hidden;
@@ -4342,14 +4343,15 @@ footer#footer {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: 1px solid rgba(0,0,0,0.06) !important;
-    border-radius: 4px !important;
-    box-shadow: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    padding: 0 !important;
+    padding: 0 0 15px 0 !important;
+    overflow: hidden !important;
 }
 .enoleh-product-card:hover {
     transform: translateY(-4px) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08) !important;
 }
 
 /* --- Bundle cards: clean minimal white --- */
@@ -4358,13 +4360,14 @@ footer#footer {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border: 1px solid rgba(0,0,0,0.06) !important;
-    border-radius: 4px !important;
+    border-radius: 8px !important;
     overflow: hidden !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    padding-bottom: 12px !important;
 }
 .enoleh-bundle-card:hover {
     transform: translateY(-5px) !important;
-    box-shadow: 0 12px 30px rgba(194,242,194,0.3) !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important;
 }
 .enoleh-bundle-name {
     font-family: 'Outfit', sans-serif !important;
