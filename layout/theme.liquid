@@ -21,7 +21,7 @@
     {{ content_for_header }}
     
     <!-- Theme CSS Asset -->
-    <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}&v=13" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}&v=14" type="text/css" media="all">
 </head>
 <body>
 
@@ -41,7 +41,16 @@
             <!-- Navigation Links Left -->
             <nav class="desktop-nav nav-left">
                 <ul>
-                    <li><a href="#featured-products" class="nav-link active">Shop</a></li>
+                    <li class="nav-dropdown-wrapper">
+                        <a href="#featured-products" class="nav-link active">Shop</a>
+                        <div class="header-dropdown-menu">
+                            <a href="#featured-products">Wigs</a>
+                            <a href="#featured-products">Bundles</a>
+                            <a href="#featured-products">Frontals</a>
+                            <a href="#featured-products">Closures</a>
+                            <a href="#featured-products">Accessoires</a>
+                        </div>
+                    </li>
                     <li><a href="#footer" class="nav-link">Our Story</a></li>
                     <li><a href="#footer" class="nav-link">FAQ</a></li>
                 </ul>
@@ -147,8 +156,8 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer" style="background-color:#ffffff; color:#000000; padding:80px 0 40px 0; border-top:1px solid #eaeaea;">
-        <div class="container footer-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; margin-bottom:60px;">
+    <footer id="footer" style="background-color:var(--color-primary); color:#000000; padding:40px 0 25px 0; border-top:1px solid #eaeaea;">
+        <div class="container footer-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:40px; margin-bottom:30px;">
             <div class="footer-col">
                 <h4 style="font-size:0.75rem; text-transform:none; font-weight:700; margin-bottom:20px; color:#000000; font-family:'Inter',sans-serif;">About</h4>
                 <ul style="list-style:none; padding:0; margin:0;">
@@ -185,7 +194,7 @@
     </footer>
 
     <!-- Theme JS Asset -->
-    <script src="{{ 'app.js' | asset_url }}&v=13" defer></script>
+    <script src="{{ 'app.js' | asset_url }}&v=14" defer></script>
 
 </body>
 </html>
